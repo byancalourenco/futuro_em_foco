@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuro em foco</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- link cdn icones - fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+
+       <div class="parte-roxa">
+
+            <div class="logo">
+               <img src="img/logo-ff.png" alt="">
+            </div>
+
+            <div class="icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+       </div>
+
+       <div class="menu">
+
+            <nav class="menu-desktop">
+
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span><i class="fa-solid fa-bars"></i></span>
+                </button>
+
+                <ul>
+                    <li><a href="#">SOBRE O PROJETO</a></li>
+                    <li><a href="#">ENTREVISTA</a></li>
+                    <li><a href="#">LINKEDIN</a></li>
+                    <li><a href="#">CURRÍCULO</a></li>
+                    <li><a href="#">DICAS</a></li>
+                    <li><a href="#">CONTATO</a></li>
+                    <li>
+                        <div class="search-container">
+                            <input type="search" placeholder="SEARCH">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>  <!-- Ícone de pesquisa -->
+                            </button>
+                        </div>
+                    </li>
+                    
+                </ul>
+
+            </nav>
+
+            <script>
+
+                const menuToggle = document.querySelector('.menu-toggle');
+                const menuDesktop = document.querySelector('.menu-desktop');
+
+                menuToggle.addEventListener('click', () => {
+                    menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+                });
+
+            </script>
+            
+       </div>
+
+    </header>
+</body>
+</html>
