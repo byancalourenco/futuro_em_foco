@@ -6,6 +6,17 @@
     font-family: "Montserrat", sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
+}
+
 /* ENTRADA.HTML */
 
 .entrada{
@@ -221,3 +232,50 @@ header{
         top: 6px; /* Ajuste para as linhas do hambúrguer */
     }
 }
+
+
+ /* footer */
+
+ .rodape_redondo {
+    position: relative;
+    background-color: #E2D6ED;
+    color:#5f4b8b;
+    text-align: center;
+    padding: 100px 20px 20px;
+    border-top-left-radius: 50% 150px;
+    border-top-right-radius: 50% 150px;
+} 
+
+/* Centraliza todo o conteúdo */
+.centraliza {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ajustando tamanho da logo */
+.img_footer {
+    position: absolute;
+    top: -150px;
+    width: 280px; /* Ajuste o tamanho conforme necessário */
+}
+
+/* Estilizando o menu */
+nav {
+    margin-top: 10px;
+}
+
+.menu_rodape {
+    text-decoration: none;
+    color: #7e5aa6;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 10px; /* Espaçamento entre os links */
+    transition: color 0.3s;
+}
+
+/* Efeito hover nos links */
+.menu_rodape:hover {
+    color: #5a3e7e; /* Um tom mais escuro ao passar o mouse */
+}
+
