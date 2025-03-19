@@ -193,7 +193,7 @@ header{
 
 /* media - menu mobile */
 
-@media (max-width: 768px) {
+@media (max-width: 964px) {
 
     .parte-roxa .logo img{
         width: 28%;
