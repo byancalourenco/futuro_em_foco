@@ -50,6 +50,11 @@ header{
     padding: 10px;
 }
 
+.icons a {
+    text-decoration: none;
+    color:white;
+}
+
 .icons i{
     padding: 5px;
 }
@@ -82,6 +87,21 @@ header{
 
 .menu-desktop li{
     margin: 0 15px;
+}
+
+.icons ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.icons li{
+    margin: 0 15px;
+}
+
+.icons{
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .menu-desktop a{
@@ -134,14 +154,16 @@ header{
 }
 
 
+
+
 /* menu mobile */
 
 .menu-toggle {
     display: none; /* Esconde o botão de menu em telas grandes */
     background: none;
     border: none;
-    color: black;
-    font-size: 2em;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
     cursor: pointer;
     position: absolute;
     top: 15px;
@@ -263,7 +285,7 @@ nav {
     /* menu */
 
     .parte-roxa .logo img{
-        width: 28%;
+        width: 50px;
     }
 
     .parte-roxa{
@@ -277,9 +299,13 @@ nav {
         top: 60px;
         left: 0;
         right: 0;
-        background-color: #6a4c9c; /* Cor de fundo do menu */
+        background-color: #ffffff; /* Cor de fundo do menu */
         padding: 20px;
         margin: 0;
+        z-index: 100;
+        border: 10px solid rgb(226, 214, 237); 
+        padding: 20px; /* Espaço interno */
+        box-shadow: rgba(165, 103, 206, 0.4) 5px 5px, rgba(165, 103, 206, 0.3) 10px 10px, rgba(165, 103, 206, 0.2) 15px 15px, rgba(165, 103, 206, 0.1) 20px 20px, rgba(165, 103, 206, 0.05) 25px 25px;
     }
 
     .menu-desktop li {
