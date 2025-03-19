@@ -17,40 +17,9 @@ main {
     flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
 }
 
-/* ENTRADA.HTML */
+/* ------------------------------------------------------------------------------- */
 
-.entrada{
-    background-color: #E2D6ED;
-}
-
-.logo-entrada{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 45%;
-    animation: flutuar 2s ease-in-out infinite alternate;
-}
-
-@keyframes flutuar {
-    0% {
-        top: 260px;
-    }
-
-    100% {
-        top: 300px;
-    }
-}
-
-.logo-entrada:hover{
-    cursor: pointer;
-}
-
-
-
-/* INICIAL.HTML */
-
-/* header */
+/* HEADER */
 
 header{
     width: 100%;
@@ -165,8 +134,6 @@ header{
 }
 
 
-
-
 /* menu mobile */
 
 .menu-toggle {
@@ -191,50 +158,10 @@ header{
     transition: all 0.3s;
 }
 
-/* media - menu mobile */
-
-@media (max-width: 964px) {
-
-    .parte-roxa .logo img{
-        width: 28%;
-    }
-
-    .parte-roxa{
-        padding: 5px 20px;
-    }
-
-    .menu-desktop ul {
-        display: none; /* Esconde o menu em telas pequenas */
-        flex-direction: column; /* Organiza os itens verticalmente */
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #6a4c9c; /* Cor de fundo do menu */
-        padding: 20px;
-        margin: 0;
-    }
-
-    .menu-desktop li {
-        margin: 10px 0; /* Espaço vertical entre os itens */
-        text-align: center;
-    }
-
-    .menu-toggle {
-        display: block; /* Exibe o botão de menu em telas pequenas */
-    }
-
-    .menu-desktop.active ul {
-        display: flex; /* Mostra o menu quando a classe 'active' for adicionada */
-    }
-
-    .menu-icon {
-        top: 6px; /* Ajuste para as linhas do hambúrguer */
-    }
-}
+/* ----------------------------------------------------------------------------------------------- */
 
 
-/* footer */
+/* FOOTER */
 
 .rodape_redondo {
     position: relative;
@@ -279,3 +206,96 @@ nav {
     color: #5a3e7e; /* Um tom mais escuro ao passar o mouse */
 }
 
+/* --------------------------------------------------------------------------------------------------- */
+
+
+/* ENTRADA */
+
+.entrada{
+    background-color: #E2D6ED;
+}
+
+.logo-entrada{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 260px;
+    }
+
+    100% {
+        top: 300px;
+    }
+}
+
+.logo-entrada:hover{
+    cursor: pointer;
+}
+
+
+/* INICIAL */
+
+/* codigos aqui dentro (pra ficar organized (: ) */
+
+/* ENTREVISTA */
+
+/* LINKEDIN */
+
+/* CURRICULO */
+
+/* DICAS - bya */
+
+/* CONTATO - bya */
+
+
+
+
+/* MEDIAS */
+
+@media (max-width: 964px) {
+
+    /* menu */
+
+    .parte-roxa .logo img{
+        width: 28%;
+    }
+
+    .parte-roxa{
+        padding: 5px 20px;
+    }
+
+    .menu-desktop ul {
+        display: none; /* Esconde o menu em telas pequenas */
+        flex-direction: column; /* Organiza os itens verticalmente */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #6a4c9c; /* Cor de fundo do menu */
+        padding: 20px;
+        margin: 0;
+    }
+
+    .menu-desktop li {
+        margin: 10px 0; /* Espaço vertical entre os itens */
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block; /* Exibe o botão de menu em telas pequenas */
+    }
+
+    .menu-desktop.active ul {
+        display: flex; /* Mostra o menu quando a classe 'active' for adicionada */
+    }
+
+    .menu-icon {
+        top: 6px; /* Ajuste para as linhas do hambúrguer */
+    }
+}
