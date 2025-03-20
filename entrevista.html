@@ -3,12 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuro em foco</title>
-    <!-- css -->
-    <link rel="stylesheet" href="style.css">
-    <!-- link cdn icones - fontawesome -->
+    <title>Futuro em Foco</title>
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+   
+    <!-- Link CDN para ícones do FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <header>
+        <div class="parte-roxa">
+            <div class="logo">
+                <img src="img/logo-ff.png" alt="Logo Futuro em Foco">
+            </div>
+
+            <div class="icons">
+                <ul class="list-unstyled d-flex">
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu">
+            <nav class="menu-desktop">
+                <ul class="list-unstyled d-flex justify-content-center">
+                    <li><a href="inicial.html">SOBRE O PROJETO</a></li>
+                    <li><a href="#">ENTREVISTA</a></li>
+                    <li><a href="#">LINKEDIN</a></li>
+                    <li><a href="#">CURRÍCULO</a></li>
+                    <li><a href="dicas.html">DICAS</a></li>
+                    <li><a href="#">CONTATO</a></li>
+                    <li>
+                        <div class="search-container d-flex">
+                            <input type="search" placeholder="SEARCH" class="form-control">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i> <!-- Ícone de pesquisa -->
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+ 
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuDesktop = document.querySelector('.menu-desktop');
+
+            menuToggle.addEventListener('click', () => {
+                menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+            });
+
+        </script>
+    </header>
+
+    <main>
+        <h3 class="titulo text-center my-5">COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?</h3>
+        <p class="text-center mb-5">Little introduction</p>
+
+        <section class="videos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/F9_tHGZyhi4?si=GqBRTg29q9hM2lqW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-100"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <p class="textoentrevistas">O Snoopy é um dos personagens mais icônicos e amados da história das tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única e cativante.</p>
+                        <p class="textoentrevistas">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação, assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu arquiinimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="videos my-5">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="corcard card testimonial-card h-100 border-0">
+                            <div class="card-up aqua-gradient"></div>
+                            <div class="avatar mx-auto white">
+                                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">Esnupi</h4>
+                                <hr>
+                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="corcard card testimonial-card h-100 border-0 card-hover">
+                            <div class="card-up aqua-gradient"></div>
+                            <div class="avatar mx-auto white">
+                                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">Esnupi</h4>
+                                <hr>
+                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="corcard card testimonial-card h-100 border-0">
+                            <div class="card-up aqua-gradient"></div>
+                            <div class="avatar mx-auto white">
+                                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">Esnupi</h4>
+                                <hr>
+                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="videos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-4">
+                        <p class="textoentrevistas text-end">O Snoopy é um dos personagens mais icônicos e amados da história das tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única e cativante.</p>
+                        <p class="textoentrevistas text-end">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação, assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu arquiinimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
+                    </div>
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/F9_tHGZyhi4?si=GqBRTg29q9hM2lqW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-100"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape_redondo">
+        <div class="centraliza text-center">
+            <img class="img_footer" src="img/logo-principal.png" alt="Logo Futuro em Foco">
+            <nav>
+                <a class="menu_rodape" href="#">SOBRE O PROJETO</a>
+                <a class="menu_rodape" href="#">ENTREVISTAS</a>
+                <a class="menu_rodape" href="#">LINKEDIN</a>
+                <a class="menu_rodape" href="#">CURRÍCULO</a>
+                <a class="menu_rodape" href="#">DICAS</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
