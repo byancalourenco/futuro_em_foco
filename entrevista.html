@@ -13,62 +13,71 @@
 </head>
 <body>
     <header>
+
         <div class="parte-roxa">
-            <div class="logo">
-                <img src="img/logo-ff.png" alt="Logo Futuro em Foco">
-            </div>
-
-            <div class="icons">
-                <ul class="list-unstyled d-flex">
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-regular fa-envelope"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+ 
+             <div class="logo">
+                <img src="img/logo-ff.png" alt="">
+             </div>
+ 
+             <div class="icons">
+                 <ul>
+                     <li>
+                         <a href="#" target="_blank">
+                             <i class="fa-brands fa-instagram"></i>
+                         </a>
+                     </li>
+                     <li>
+                         <a href="#" target="_blank">
+                             <i class="fa-regular fa-envelope"></i>
+                         </a>
+                     </li>
+                     <li>
+                         <button class="menu-toggle" aria-label="Abrir menu">
+                             <span><i class="fa-solid fa-bars"></i></span>
+                         </button>
+                     </li>
+                 </ul>
+             </div>
+ 
         </div>
-
+ 
         <div class="menu">
-            <nav class="menu-desktop">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li><a href="inicial.html">SOBRE O PROJETO</a></li>
-                    <li><a href="#">ENTREVISTA</a></li>
-                    <li><a href="#">LINKEDIN</a></li>
-                    <li><a href="#">CURRÍCULO</a></li>
-                    <li><a href="dicas.html">DICAS</a></li>
-                    <li><a href="#">CONTATO</a></li>
-                    <li>
-                        <div class="search-container d-flex">
-                            <input type="search" placeholder="SEARCH" class="form-control">
-                            <button type="submit" class="search-button">
-                                <i class="fas fa-search"></i> <!-- Ícone de pesquisa -->
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+ 
+             <nav class="menu-desktop">
+ 
+                 <ul>
+                     <li><a href="#">SOBRE O PROJETO</a></li>
+                     <li><a href="entrevista.html">ENTREVISTA</a></li>
+                     <li><a href="#">LINKEDIN</a></li>
+                     <li><a href="#">CURRÍCULO</a></li>
+                     <li><a href="#">DICAS</a></li>
+                     <li><a href="#">CONTATO</a></li>
+                     <li>
+                         <div class="search-container">
+                             <input type="search" placeholder="SEARCH">
+                             <button type="submit" class="search-button">
+                                 <i class="fas fa-search"></i>  <!-- Ícone de pesquisa -->
+                             </button>
+                         </div>
+                     </li>
+                     
+                 </ul>
+ 
+             </nav>
+             
         </div>
         <script>
+  
+             const menuToggle = document.querySelector('.menu-toggle');
+             const menuDesktop = document.querySelector('.menu-desktop');
  
-            const menuToggle = document.querySelector('.menu-toggle');
-            const menuDesktop = document.querySelector('.menu-desktop');
-
-            menuToggle.addEventListener('click', () => {
-                menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
-            });
-
+             menuToggle.addEventListener('click', () => {
+                 menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+             });
+ 
         </script>
+ 
     </header>
 
     <main>

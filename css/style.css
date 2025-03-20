@@ -409,5 +409,10 @@ nav {
         cursor: pointer;
     }
 
+    .img_footer{
+        width: 230px;
+        top: -120px;
+    }
+
     
 }

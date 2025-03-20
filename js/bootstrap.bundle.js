@@ -23,7 +23,7 @@
   const elementMap = new Map();
   const Data = {
     set(element, key, instance) {
-      if (!elementMap.has(element)) {
+      if (!elementMaphas(element)) {
         elementMap.set(element, new Map());
       }
       const instanceMap = elementMap.get(element);
