@@ -282,7 +282,54 @@ nav {
 
 /* INICIAL */
 
-/* codigos aqui dentro (pra ficar organized (: ) */
+.col-6{
+    text-align: left;
+}
+
+.tituloinicial{
+    font-weight: 900;
+    color: #b188d3;
+}
+
+.btnsaibamais{
+    background-color: #b188d3;
+    border-radius: 30px;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+  
+.btnsaibamais:hover {
+    background-color: #7e5aa6;
+}
+
+.logoinicial{
+    position: absolute; 
+    right: 10%; 
+    top: 50%;
+    transform: translateY(-50%) rotate(-10deg); 
+    max-width: 700px; 
+    overflow: hidden; 
+}
+  
+.container {
+    padding-top: 50px;
+}
+
+.sectionroxa{
+    background-color: #b188d3;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    padding-bottom: 40px;
+}
+
+.btnclique{
+    background-color: #5a3e7e;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
 
 /* ENTREVISTA */
 
@@ -499,3 +546,7 @@ nav {
     }
     
 }
+
+
+
+
