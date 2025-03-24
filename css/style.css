@@ -11,6 +11,8 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+
 }
 
 main {
@@ -382,8 +384,80 @@ nav {
     height: 100%;
   }
 
-  
-  
+/*___________________________________________________________________________________________________*/  
+
+/*SOBRE*/  
+
+.section_sobre{
+    margin-bottom: 10%;
+}
+
+
+.imgsobre_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* Evita que a imagem estoure o layout */
+    margin-bottom: 10%;
+}
+
+/* Ajusta a imagem para não ultrapassar a tela */
+.img_sobre {
+    width: 75%; /* Faz a imagem se ajustar ao contêiner */
+    max-width: 100%; /* Garante que ela não fique maior que o esperado */
+    height: auto; /* Mantém a proporção correta */
+    object-fit: contain; /* Evita cortes indesejados */
+}
+
+.titulo_sobre{
+    color: #b188d3;
+    text-align: center;
+}
+
+.textocard{
+    margin-top: 5%;
+}
+.titulocard{
+    font-size: 1.7rem;
+    color: #b188d3 !important;
+    
+}
+.section_sobre_dois{
+    display: flex;
+    max-height: 250px; 
+    margin-top: 20%;
+    background-color: #c9aedfa9;
+    justify-content: space-around; /* Espaçamento uniforme entre os cards */
+    padding: 40px 20px; /* Ajuste o espaçamento externo */
+}
+
+.card_sobre{
+    background-color: #fbf7ff;
+    border-radius: 10%; 
+    box-shadow: 4px 4px 10px rgba(129, 35, 236, 0.5);
+}
+
+
+.card_ani {
+    transition: transform 0.7s ease-out, box-shadow 0.5s ease-out;
+    box-shadow: 4px 4px 10px rgba(99, 96, 96, 0.10);
+    position: relative;
+    top: -220px; /* Faz ele "subir" um pouco acima da section */
+    z-index: 2; /* Garante que fique por cima de outros elementos */
+    transition: all 0.3s ease;
+}
+
+.card_ani :hover{
+    transform: scale(1.1);
+}
+
+.baixo{
+    margin-bottom: 150px !important;
+}
+
+/*___________________________________________________________________________________________________*/    
 
 /* LINKEDIN */
 
@@ -544,6 +618,31 @@ nav {
         width: 360px;
         margin-top: 30px;
     }
+    
+    /*Sobre*/
+    .section_sobre_dois {
+        flex-direction: column; /* Empilha os cards no celular */
+        align-items: center; /* Centraliza os elementos */
+        max-height: none; /* Permite que os cards se ajustem automaticamente */
+        margin-top: 10%; /* Ajuste para melhor visualização */
+    }
+
+    .card_ani {
+        position: static; /* Remove o efeito de sobreposição no mobile */
+        top: 0;
+        width: 90%; /* Ajuste de largura para melhor adaptação */
+        margin-bottom: 20px; /* Espaço entre os cards */
+    }
+
+    .card_ani:nth-child(2) { /* Altera o card do meio */
+        background-color: purple !important;
+        color: white !important;
+    }
+
+    .card_ani:nth-child(2) .titulocard {
+        color: white !important; /* Para o título ficar legível */
+    }
+
     
 }
 

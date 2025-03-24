@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuro em foco</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- link cdn icones - fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body> 
+    <header>
+
+       <div class="parte-roxa">
+
+            <div class="logo">
+               <img src="img/logo-ff.png" alt="">
+            </div>
+
+            <div class="icons">
+                <ul>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <button class="menu-toggle" aria-label="Abrir menu">
+                            <span><i class="fa-solid fa-bars"></i></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+       </div>
+
+       <div class="menu">
+
+            <nav class="menu-desktop">
+
+                <ul>
+                    <li><a href="sobre.html">SOBRE O PROJETO</a></li>
+                    <li><a href="entrevista.html">ENTREVISTA</a></li>
+                    <li><a href="#">LINKEDIN</a></li>
+                    <li><a href="#">CURRÍCULO</a></li>
+                    <li><a href="dicas.html">DICAS</a></li>
+                    <li><a href="#">CONTATO</a></li>
+                    <li>
+                        <div class="search-container">
+                            <input type="search" placeholder="SEARCH">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>  <!-- Ícone de pesquisa -->
+                            </button>
+                        </div>
+                    </li>
+                    
+                </ul>
+
+            </nav>
+            
+       </div>
+       <script>
+ 
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuDesktop = document.querySelector('.menu-desktop');
+
+            menuToggle.addEventListener('click', () => {
+                menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+            });
+
+        </script>
+
+    </header>
+
+    <main>
+        
+        <h2 class="titulo text-center my-5 linha">SOBRE O PROJETO</h2>    
+        
+        <section class="section_sobre">
+            <div class="container">
+                <div class="row align-items-center"> <!-- Alinha os itens verticalmente -->
+                    <div class="col-12 col-md-6">
+                        <div class="imgsobre_container">
+                            <img class="img_sobre" src="img/hello_kitty_and_friends.jpg" alt="Hello Kitty and Friends">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h4 class="titulo_sobre">O QUE É O PROJETO FUTURO EM FOCO?</h4>
+                        <p>
+                            Hello Kitty and Friends é uma série animada baseada na icônica personagem da Sanrio, Hello Kitty. O desenho acompanha Hello Kitty e seus amigos, como My Melody, Badtz-Maru, Cinnamoroll, Keroppi e Pompompurin, em diversas aventuras fofas e cheias de diversão. Com um estilo colorido e cativante, a animação transmite mensagens de amizade, gentileza e trabalho em equipe, ensinando valores importantes de forma leve e encantadora. Cada episódio apresenta histórias que envolvem desafios simples do dia a dia, sempre resolvidos com união e carinho. Os personagens possuem personalidades distintas, tornando as interações ainda mais especiais e cativantes. A série conquistou fãs ao redor do mundo, encantando crianças e adultos que apreciam o universo kawaii. Hello Kitty and Friends continua sendo um clássico do universo Sanrio, trazendo alegria e nostalgia para diferentes gerações.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="section_sobre section_sobre_dois">
+           
+            <div class="container text-center">
+                <!-- <div class="row "> -->
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div class="col">
+                    <div class="col">
+                        <div class="card card_ani" style="width: 18rem;">
+                            <div class="card-body card_sobre">
+                              <h5 class="card-title titulocard">HELLO KITTY</h5>
+                              <p class="card-text textocard">No desenho Hello Kitty and Friends, Hello Kitty é uma gatinha doce, amigável e sempre disposta a ajudar. Com seu laço icônico e um coração cheio de bondade, ela vive diversas aventuras ao lado de seus amigos. Sempre otimista, ela ensina valores como amizade, gentileza e cooperação.</p>
+                            </div>
+                          </div>
+                  </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="col">
+                        <div class="card card_ani" style="width: 18rem;">
+                            <div class="card-body card_sobre">
+                              <h5 class="card-title titulocard">MY MELODY</h5>
+                              <p class="card-text textocard">No desenho Hello Kitty and Friends, My Melody é uma coelhinha doce e gentil, conhecida por seu capuz rosa. Sempre prestativa e amigável, ela adora ajudar seus amigos e espalhar bondade. Sua personalidade tranquila e carinhosa faz dela uma companhia adorável em todas as aventuras.</p>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="col">
+                        <div class="card card_ani" style="width: 18rem;">
+                            <div class="card-body card_sobre">
+                              <h5 class="card-title titulocard">KUROMI</h5>
+                              <p class="card-text textocard">No desenho Hello Kitty and Friends, Kuromi é uma coelhinha rebelde e cheia de atitude, sempre com seu gorro preto e uma caveira rosa. Apesar de seu jeito travesso e competitivo, no fundo ela tem um lado gentil e leal. Suas travessuras muitas vezes trazem momentos engraçados e divertidos para a turma.</p>
+                            </div>
+                          </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+        </section>
+
+        <section class="videos my-5 section_sobre pessoas">
+
+            <h3 class=" titulo_sobre ">INTEGRANTES:</h3>
+            <div class="container text-center ">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="corcard card testimonial-card h-100 border-0">
+                            <div class="card-up aqua-gradient"></div>
+                            <div class="avatar mx-auto white">
+                                <img src="img/iconkitty.png" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">Hello Kitty</h4>
+                                <hr>
+                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="corcard card testimonial-card h-100 border-0 card-hover">
+                            <div class="card-up aqua-gradient"></div>
+                            <div class="avatar mx-auto white">
+                                <img src="img/iconkitty.png" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">Hello Kitty</h4>
+                                <hr>
+                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="corcard card testimonial-card h-100 border-0">
+                            <div class="card-up aqua-gradient"></div>
+                            <div class="avatar mx-auto white">
+                                <img src="img/iconkitty.png" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">Hello Kitty</h4>
+                                <hr>
+                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center baixo">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="corcard card testimonial-card h-100 border-0">
+                            <div class="card-up aqua-gradient"></div>
+                            <div class="avatar mx-auto white">
+                                <img src="img/iconkitty.png" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">Hello Kitty</h4>
+                                <hr>
+                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="corcard card testimonial-card h-100 border-0">
+                            <div class="card-up aqua-gradient"></div>
+                            <div class="avatar mx-auto white">
+                                <img src="img/iconkitty.png" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">Hello Kitty</h4>
+                                <hr>
+                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape_redondo">
+        <div class="centraliza">
+            <img class="img_footer" src="img/logo-principal.png" alt="">
+            <nav>
+                <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
+                <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
+                <a class="menu_rodape" href="#">LINKEDIN</a>
+                <a class="menu_rodape" href="#">CURRÍCULO</a>
+                <a class="menu_rodape" href="dicas.html">DICAS</a>
+                <a class="menu_rodape" href="#">CONTATO</a>
+            </nav>
+        </div>
+    </footer>
+    
+</body>    
+</html>
