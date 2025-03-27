@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuro em foco</title>
+    <!-- css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- js bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- link cdn icones - fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="parte-roxa">
+
+             <div class="logo">
+                <img src="img/logo-ff.png" alt="">
+             </div>
+ 
+            <div class="icons">
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="fa-regular fa-envelope"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <button class="menu-toggle" aria-label="Abrir menu">
+                                <span><i class="fa-solid fa-bars"></i></span>
+                            </button>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+ 
+        <div class="menu">
+                <nav class="menu-desktop">
+                    <ul>
+                        <li><a href="sobre.html">SOBRE O PROJETO</a></li>
+                        <li><a href="entrevista.html">ENTREVISTA</a></li>
+                        <li><a href="#">LINKEDIN</a></li>
+                        <li><a href="#">CURRÍCULO</a></li>
+                        <li><a href="dicas.html">DICAS</a></li>
+                        <li><a href="contato.html">CONTATO</a></li>
+                        <li>
+                            <div class="search-container">
+                                <input type="search" placeholder="SEARCH">
+                                <button type="submit" class="search-button">
+                                    <i class="fas fa-search"></i>  <!-- Ícone de pesquisa -->
+                                </button>
+                            </div>
+                        </li>
+                     
+                    </ul>
+                </nav> 
+        </div>
+
+        <script>
+  
+            // menu
+
+             const menuToggle = document.querySelector('.menu-toggle');
+             const menuDesktop = document.querySelector('.menu-desktop');
+ 
+             menuToggle.addEventListener('click', () => {
+                 menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+             });
+ 
+        </script>
+    </header>
+
+    <main>
+
+        <section class="sec-contato">
+            <h2 class="titulo text-center my-5 linha">CONTATO</h2>    
+            <p class="text-center-contato mb-5">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis ea perferendis tempore quam, molestias molestiae corporis deleniti maxime ipsa nobis voluptatem impedit. Veritatis rerum odit natus vel quibusdam accusamus reiciendis?
+            </p>
+
+            <div class="container-contato">
+                <form action="#" method="POST">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" nmae="nome" placeholder="Seu nome">
+        
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="seuemail@gmail.com">
+        
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="+00 00 00000-0000">
+        
+                    <label for="mensagem">Mensagem</label>
+                    <input type="text" id="mensagem" name="mensagem" placeholder="Sua mensagem">
+
+                    <button class="btn-enviar" type="submit">ENVIAR</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape_redondo">
+        <div class="centraliza">
+            <img class="img_footer" src="img/logo-principal.png" alt="">
+            <nav>
+                <a class="menu_rodape" href="#">SOBRE O PROJETO</a>
+                <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
+                <a class="menu_rodape" href="#">LINKEDIN</a>
+                <a class="menu_rodape" href="#">CURRÍCULO</a>
+                <a class="menu_rodape" href="dicas.html">DICAS</a>
+                <a class="menu_rodape" href="sobre.html">CONTATO</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
