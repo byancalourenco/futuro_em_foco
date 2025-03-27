@@ -19,6 +19,7 @@ main {
     flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
 }
 
+
 /* ------------------------------------------------------------------------------- */
 
 /* HEADER */
@@ -481,6 +482,17 @@ nav {
     border: none;
     background-color: #E0BBFF;
     width: 200px;
+    color: #000;
+}
+
+.button-dicas:hover{
+    cursor: pointer;
+    background-color: #E0BBFF;
+    color: #000;
+}
+
+.button-dicas:active{
+    background-color: #E0BBFF;
 }
 
 .espaco-dicas{
@@ -495,15 +507,15 @@ nav {
     display: none;
 }
 
-.textos-dica-centro{
-    align-items: center;
-    text-align: center;
-}
-
 .img-dicas-modal{
     width: 400px;
     right: 50%;
     left: 50%;
+}
+
+.text-modal{
+    align-items: left;
+    text-align: left;
 }
 
 /* CONTATO - bya */
@@ -646,6 +658,33 @@ nav {
     
 }
 
+@media (min-width: 1015px) and (max-width: 1200px){
+    .sec-dicas-desktop{
+        display: none;
+    }
+
+    .sec-dicas-mobile{
+        display: block;
+        margin-bottom: 30%;
+    }
+
+    .row .col .img-dicas{
+        width: 360px;
+        margin-top: 30px;
+    }
+}
+
+
+@media (min-width: 1390px){
+
+    .espaco-dicas{
+        margin-right: 20px;
+    }
+
+    .espaco-dicas2{
+        margin-left: 20px;
+    }
+}
 
 
 

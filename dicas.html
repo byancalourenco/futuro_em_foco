@@ -65,6 +65,8 @@
 
         <script>
   
+            // menu
+
              const menuToggle = document.querySelector('.menu-toggle');
              const menuDesktop = document.querySelector('.menu-desktop');
  
@@ -86,7 +88,7 @@
 
                     <!-- dica #1 - esquerda -->
                     <div class="row">
-                        <div class="col">
+                        <div class="col espaco-dicas2">
                             <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
                         </div>
                         <div class="col">
@@ -95,67 +97,66 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
                             </p>
 
-                            <!-- +detalhes -->
-                            <div class="textos-dica-esquerda">
+                            <!-- Botão para abrir o Primeiro Modal -->
+                            <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica1" id="btn">
+                                Mais detalhes dica #1
+                            </button>
 
-                                <button class="button-dicas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Mais detalhes</button>
-                                
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mais detalhes dica #4</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="textos-dica-centro">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
-                                                </p>
-                                                <img class="img-dicas-modal" src="img/img-homem-aranha.png" alt="">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                            </div>
+                            <!-- Primeiro Modal -->
+                            <div class="modal fade" id="modalDica1" tabindex="-1" aria-labelledby="modalDica1Label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalDica1Label">Mais detalhes dica #1</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Conteúdo exclusivo do Modal Dica #1</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis rerum ab eum inventore fuga voluptas perspiciatis ipsam atque doloremque unde dolores deleniti, quis fugit non asperiores similique dolor tempore.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary button-dicas" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            
                         </div>
                     </div>
     
                     <!-- dica #2 - direita -->
                     <div class="row">
-                        <div class="col">
+                        <div class="col textos-dica-direita">
                             <h3 class="textos-dica-direita">DICA #2</h3>
                             <p class="textos-dica-direita">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
                             </p>
 
-                            <!-- +detalhes -->
-                            <div class="textos-dica-direita">
+                            <!-- Botão para abrir o Segundo Modal -->
+                            <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica2">
+                                Mais detalhes dica #2
+                            </button>
 
-                                <button class="button-dicas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Mais detalhes</button>
-                              
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mais detalhes dica #4</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="textos-dica-centro">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
-                                                </p>
-                                                <img class="img-dicas-modal" src="img/img-homem-aranha.png" alt="">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                            </div>
+                            <!-- Segundo Modal -->
+                            <div class="modal fade" id="modalDica2" tabindex="-1" aria-labelledby="modalDica2Label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalDica2Label">Mais detalhes dica #2</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body text-modal">
+                                            <p>Conteúdo exclusivo do Modal Dica #2 </p>
+                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, voluptas ullam. Autem expedita, itaque earum quam voluptas amet enim veniam doloribus, eveniet quibusdam ducimus cumque debitis corrupti, exercitationem fugiat laboriosam!</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary button-dicas" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                         <div class="col espaco-dicas">
                             <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
@@ -164,7 +165,7 @@
     
                     <!-- dica #3 - esquerda -->
                     <div class="row">
-                        <div class="col">
+                        <div class="col espaco-dicas2">
                             <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
                         </div>
                         <div class="col">
@@ -172,28 +173,25 @@
                             <p class="textos-dica-esquerda">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
                             </p>
+                            <!-- Botão para abrir o Terceiro Modal -->
+                            <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica3">
+                                Mais detalhes dica #3
+                            </button>
 
-                            <!-- +detalhes -->
-                            <div class="textos-dica-esquerda">
-
-                                <button class="button-dicas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Mais detalhes</button>
-                                
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mais detalhes dica #4</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="textos-dica-centro">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
-                                                </p>
-                                                <img class="img-dicas-modal" src="img/img-homem-aranha.png" alt="">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                            </div>
+                            <!-- Terceiro Modal -->
+                            <div class="modal fade" id="modalDica3" tabindex="-1" aria-labelledby="modalDica1Label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalDica1Label">Mais detalhes dica #3</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Conteúdo exclusivo do Modal Dica #3</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis rerum ab eum inventore fuga voluptas perspiciatis ipsam atque doloremque unde dolores deleniti, quis fugit non asperiores similique dolor tempore.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary button-dicas" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -203,37 +201,35 @@
     
                     <!-- dica #4 - direita -->
                     <div class="row">
-                        <div class="col">
+                        <div class="col textos-dica-direita">
                             <h3 class="textos-dica-direita">DICA #4</h3>
                             <p class="textos-dica-direita">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
                             </p>
+                            <!-- Botão para abrir o Quarto Modal -->
+                            <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica4">
+                                Mais detalhes dica #4
+                            </button>
 
-                            <!-- +detalhes -->
-                            <div class="textos-dica-direita">
-
-                                <button class="button-dicas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Mais detalhes</button>
-                                
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mais detalhes dica #4</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="textos-dica-centro">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
-                                                </p>
-                                                <img class="img-dicas-modal" src="img/img-homem-aranha.png" alt="">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                            </div>
+                            <!-- Quarto Modal -->
+                            <div class="modal fade" id="modalDica4" tabindex="-1" aria-labelledby="modalDica2Label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalDica2Label">Mais detalhes dica #4</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body text-modal">
+                                            <p>Conteúdo exclusivo do Modal Dica #4 </p>
+                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, voluptas ullam. Autem expedita, itaque earum quam voluptas amet enim veniam doloribus, eveniet quibusdam ducimus cumque debitis corrupti, exercitationem fugiat laboriosam!</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary button-dicas" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="col espaco-dicas">
                             <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
@@ -241,6 +237,8 @@
                     </div>
                 </div>
             </section>
+
+            <!-- CELULAR -->
 
             <section class="sec-dicas-mobile">
                 <div class="container">
@@ -252,31 +250,32 @@
                             <p class="textos-dica-esquerda">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
                             </p>
-                            <!-- +detalhes -->
-                            <div class="textos-dica-esquerda">
 
-                                <button class="button-dicas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Mais detalhes</button>
-                                
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mais detalhes dica #4</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="textos-dica-centro">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
-                                                </p>
-                                                <img class="img-dicas-modal" src="img/img-homem-aranha.png" alt="">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                            </div>
+                            <!-- Botão para abrir o Primeiro Modal Mobile -->
+                            <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica1mobile">
+                                Mais detalhes dica #1 mobile
+                            </button>
+
+                            <!--  Primeiro Modal Mobile -->
+                            <div class="modal fade" id="modalDica1mobile" tabindex="-1" aria-labelledby="modalDica1Label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalDica1Label">Mais detalhes dica #1 mobile</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Conteúdo exclusivo do Modal Dica #1 mobile</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis rerum ab eum inventore fuga voluptas perspiciatis ipsam atque doloremque unde dolores deleniti, quis fugit non asperiores similique dolor tempore.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary button-dicas" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
+                            
                         </div>
                         <div class="col">
                             <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
@@ -290,27 +289,25 @@
                             <p class="textos-dica-esquerda">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
                             </p>
-                            <!-- +detalhes -->
-                            <div class="textos-dica-esquerda">
+                            <!-- Botão para abrir o Segundo Modal Mobile -->
+                            <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica2mobile">
+                                Mais detalhes dica #2 mobile
+                            </button>
 
-                                <button class="button-dicas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Mais detalhes</button>
-                                
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mais detalhes dica #4</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="textos-dica-centro">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
-                                                </p>
-                                                <img class="img-dicas-modal" src="img/img-homem-aranha.png" alt="">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                            </div>
+                            <!--  Primeiro Modal Mobile -->
+                            <div class="modal fade" id="modalDica2mobile" tabindex="-1" aria-labelledby="modalDica1Label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalDica1Label">Mais detalhes dica #2 mobile</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Conteúdo exclusivo do Modal Dica #2 mobile</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis rerum ab eum inventore fuga voluptas perspiciatis ipsam atque doloremque unde dolores deleniti, quis fugit non asperiores similique dolor tempore.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary button-dicas" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -328,27 +325,25 @@
                             <p class="textos-dica-esquerda">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
                             </p>
-                            <!-- +detalhes -->
-                            <div class="textos-dica-esquerda">
+                            <!-- Botão para abrir o Terceiro Modal Mobile -->
+                            <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica3mobile">
+                                Mais detalhes dica #3 mobile
+                            </button>
 
-                                <button class="button-dicas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Mais detalhes</button>
-                                
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mais detalhes dica #4</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="textos-dica-centro">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
-                                                </p>
-                                                <img class="img-dicas-modal" src="img/img-homem-aranha.png" alt="">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                            </div>
+                            <!--  Terceiro Modal Mobile -->
+                            <div class="modal fade" id="modalDica3mobile" tabindex="-1" aria-labelledby="modalDica1Label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalDica1Label">Mais detalhes dica #3 mobile</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Conteúdo exclusivo do Modal Dica #3 mobile</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis rerum ab eum inventore fuga voluptas perspiciatis ipsam atque doloremque unde dolores deleniti, quis fugit non asperiores similique dolor tempore.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary button-dicas" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -366,27 +361,25 @@
                             <p class="textos-dica-esquerda">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
                             </p>
-                            <!-- +detalhes -->
-                            <div class="textos-dica-esquerda">
+                            <!-- Botão para abrir o Quarto Modal Mobile -->
+                            <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica4mobile">
+                                Mais detalhes dica #4 mobile
+                            </button>
 
-                                <button class="button-dicas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Mais detalhes</button>
-                                
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mais detalhes dica #4</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="textos-dica-centro">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit
-                                                </p>
-                                                <img class="img-dicas-modal" src="img/img-homem-aranha.png" alt="">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                            </div>
+                            <!--  Quarto Modal Mobile -->
+                            <div class="modal fade" id="modalDica4mobile" tabindex="-1" aria-labelledby="modalDica1Label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalDica1Label">Mais detalhes dica #4 mobile</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Conteúdo exclusivo do Modal Dica #4 mobile</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis rerum ab eum inventore fuga voluptas perspiciatis ipsam atque doloremque unde dolores deleniti, quis fugit non asperiores similique dolor tempore.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary button-dicas" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
