@@ -334,9 +334,10 @@ nav {
     text-decoration: none;
 }
 
+/*___________________________________________________________________________________________________*/ 
+
 /* ENTREVISTA */
 
-  
 .testimonial-card .card-up {
     overflow: hidden;
     border-top-left-radius: .25rem;
@@ -345,45 +346,46 @@ nav {
   
 .corcard{
     background-color: #E2D6ED !important;
+
 }
 
-  .testimonial-card .avatar {
+.testimonial-card .avatar {
     width: 120px;
     margin-top: -60px;
     overflow: hidden;
     border: 5px solid #fff;
     border-radius: 50%;
 
-  }
+}
 
 .textoentrevistas {
-    font-size: 15px !important;
+    font-size: 0.9375rem !important;
 
 }
 
-
-
-
+.texto-mobile-esnupi {
+    display: none;
+}
 
 .videos {
     margin: 3% 10% 10% 10%; 
   }
   
-  .video-container {
+.video-container {
     position: relative;
     padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
     height: 0;
     overflow: hidden;
     max-width: 100%;
-  }
+}
   
-  .video-container iframe {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  }
+}
 
 /*___________________________________________________________________________________________________*/  
 
@@ -460,7 +462,183 @@ nav {
 
 /*___________________________________________________________________________________________________*/    
 
+
 /* LINKEDIN */
+
+.video-linkedin{
+    margin-bottom: 10%;
+}
+
+.custom-col-linkedin {
+    width: 100%; /* Faz com que as colunas ocupem toda a largura e fiquem empilhadas */
+  }
+
+.bannerlinkedin{
+    background-color: #ecd5ff;
+    margin-bottom: 6%;
+    padding: 1% 15%;
+
+}
+
+.linkedinimg{
+    width: 60%;
+}
+
+.linkedinh4{
+    color: #000;
+    font-weight: normal;   /* Remove o negrito */
+    
+}
+
+.linkedintitulo{
+    margin-bottom: none;
+}
+
+.linkedip{
+    padding: 0% 10%;
+    margin-top: none;
+}
+
+.sectiontimeline{
+    margin-bottom: 10% !important;
+}
+
+.ultimeline {
+    --col-gap: 2rem;
+    --row-gap: 2rem;
+    --line-w: 0.25rem;
+    display: grid;
+    grid-template-columns: var(--line-w) 1fr;
+    grid-auto-columns: max-content;
+    column-gap: var(--col-gap);
+    list-style: none;
+    width: min(60rem, 90%);
+    margin-inline: auto;
+}
+
+/* Linha vertical da timeline */
+.ultimeline::before {
+    content: "";
+    grid-column: 1;
+    grid-row: 1 / span 20;
+    background: rgb(225, 225, 225); /* Cor da linha da timeline */
+    border-radius: calc(var(--line-w) / 2);
+}
+
+/* Espaçamento entre os itens da timeline */
+.ultimeline .litimeline:not(:last-child) {
+    margin-bottom: var(--row-gap);
+}
+
+/* Cartões da timeline */
+.ultimeline .litimeline {
+    grid-column: 2;
+    --inlineP: 1.5rem;
+    margin-inline: var(--inlineP);
+    grid-row: span 2;
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+}
+
+/* Data no topo de cada cartão */
+.ultimeline .litimeline .date {
+    --dateH: 3rem;
+    height: var(--dateH);
+    margin-inline: calc(var(--inlineP) * -1);
+
+    text-align: center;
+    background-color: #b188d3; /* Cor do fundo da data */
+    color: white; /* Cor do texto da data */
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    display: grid;
+    place-content: center;
+    position: relative;
+
+    border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+}
+
+/* Aba da data que aponta para a timeline */
+.ultimeline .litimeline .date::before {
+    content: "";
+    width: var(--inlineP);
+    aspect-ratio: 1;
+    background: #b188d3; /* Cor da aba da data */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+    position: absolute;
+    top: 100%;
+
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    right: 0;
+}
+
+/* Círculo indicador da timeline */
+.ultimeline .litimeline .date::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    background: var(--bgColor); /* Cor do centro do círculo */
+    border: 0.3rem solid #b188d3; /* Cor da borda do círculo */
+    border-radius: 50%;
+    top: 50%;
+
+    transform: translate(50%, -50%);
+    right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+/* Fundo dos títulos e descrições dos cartões */
+.ultimeline .litimeline .title,
+.ultimeline .litimeline .descr {
+    background: #e7e7e7; /* Cor do fundo dos cartões */
+    position: relative;
+    padding-inline: 1.5rem;
+}
+
+/* Estilo dos títulos */
+.ultimeline .litimeline .title {
+    overflow: hidden;
+    padding-block-start: 1.5rem;
+    padding-block-end: 1rem;
+    font-weight: 500;
+}
+
+/* Estilo das descrições */
+.ultimeline .litimeline .descr {
+    padding-block-end: 1.5rem;
+    font-weight: 300;
+}
+
+/* Sombras sob os cartões */
+.ultimeline .litimeline .title::before,
+.ultimeline .litimeline .descr::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 0.5rem;
+    background: rgba(0, 0, 0, 0.5); /* Cor da sombra dos cartões */
+    left: 50%;
+    border-radius: 50%;
+    filter: blur(4px);
+    transform: translate(-50%, 50%);
+}
+
+.ultimeline .litimeline .title::before {
+    bottom: calc(100% + 0.125rem);
+}
+
+.ultimeline .litimeline .descr::before {
+    z-index: -1;
+    bottom: 0.25rem;
+}
+
+
+
+
+/*___________________________________________________________________________________________________*/ 
+
+
 
 /* CURRICULO */
 
@@ -771,5 +949,89 @@ input:-webkit-autofill {
     }
 }
 
+/* MEDIA ENTREVISTAS */
+
+
+@media (max-width: 768px) {
+
+    .cardnocelular{
+        margin-top: 13%;
+    }
+
+    .linkedinimg{
+        display: none;
+    }
+
+
+
+}
+
+@media (max-width: 1262px) {
+
+    .custom-col {
+      width: 100%; /* Faz com que as colunas ocupem toda a largura e fiquem empilhadas */
+    }
+
+    .texto-desktop-esnupi {
+        display: none;
+        
+    }
+
+    .texto-mobile-esnupi {
+        display: block;
+        text-align: justify;
+    }
+
+
+    .esnupi2{
+        border-left: 4px solid #dfb7ff; /* Barra lateral para destaque */
+        padding: 3%;
+        border-radius: 5px;
+        
+    }
+  }
+
+  /* TIMELINE  */
+@media (min-width: 40rem) {
+    .ultimeline {
+        grid-template-columns: 1fr var(--line-w) 1fr;
+    }
+
+    .ultimeline::before {
+        grid-column: 2;
+    }
+
+    /* Alternância de lado dos cartões */
+    .ultimeline .litimeline:nth-child(odd) {
+        grid-column: 1;
+    }
+
+    .ultimeline .litimeline:nth-child(even) {
+        grid-column: 3;
+    }
+
+    /* Ajuste no segundo cartão */
+    .ultimeline .litimeline:nth-child(2) {
+        grid-row: 2/4;
+    }
+
+    /* Aba da data dos cartões ímpares */
+    .ultimeline .litimeline:nth-child(odd) .date::before {
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        left: 0;
+    }
+
+    /* Círculo indicador da timeline nos cartões ímpares */
+    .ultimeline .litimeline:nth-child(odd) .date::after {
+        transform: translate(-50%, -50%);
+        left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+    }
+
+    .ultimeline .litimeline:nth-child(odd) .date {
+        border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+    }
+
+    
+}
 
 
