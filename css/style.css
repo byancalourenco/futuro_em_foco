@@ -264,7 +264,7 @@ nav {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 45%;
+    width: 40%;
     animation: flutuar 2s ease-in-out infinite alternate;
 }
 
@@ -665,11 +665,11 @@ nav {
 /* DICAS - bya */
 
 .textos-dica-esquerda{
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
 .textos-dica-direita{
-    margin-top: 35px;
+    margin-top: 20px;
     text-align: right;
 }
 
@@ -718,62 +718,103 @@ nav {
 
 /* CONTATO - bya */
 
-/* CONTATO */
-
-.text-center-contato{
-    max-width: 1100px;
-    text-align: center;
-    align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
+.sec-contato {
+    padding: 40px 20px;
+    background-color: #fff;
 }
 
-.container-contato{
+.text-center-contato {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+.container-contato {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    width: 1000px;
-    margin-left: 150px;
+    background-color: #fdfdfd;
 }
 
-label{
+label {
     font-weight: bold;
     display: block;
     margin-top: 20px;
     color: #8742C1;
 }
 
-input, textarea{
+input,
+textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
     border: none;
     background-color: transparent;
     border-bottom: 1px solid #8742C1;
+    font-size: 1rem;
 }
 
-input, textarea::after{
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+input:focus,
+textarea:focus {
     outline: none;
+    border-bottom: 2px solid #8742C1;
 }
 
 input:-webkit-autofill {
-    box-shadow: 0 0 0 1000px white inset; /* Torna o fundo branco */
-    -webkit-box-shadow: 0 0 0 1000px white inset; 
+    box-shadow: 0 0 0 1000px white inset;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
 }
 
-.btn-enviar{
-    padding: 10px;
+.btn-enviar {
+    padding: 12px;
     border-radius: 30px;
     font-weight: 600;
     border: none;
     background-color: #E0BBFF;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     color: #8742C1;
     margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.sec-contato{
-    height: 130vh;
+.btn-enviar:hover {
+    background-color: #d2a7f2;
+}
+
+@media (max-width: 768px) {
+    .text-center-contato {
+        padding: 0 10px;
+        font-size: 0.95rem;
+    }
+
+    .container-contato {
+        padding: 15px;
+    }
+
+    .btn-enviar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-center-contato {
+        font-size: 0.9rem;
+    }
+
+    input,
+    textarea {
+        font-size: 0.95rem;
+    }
 }
 
 
@@ -908,23 +949,6 @@ input:-webkit-autofill {
     .card_ani:nth-child(2) .titulocard {
         color: white !important; /* Para o título ficar legível */
     }
-
-    /* contato */
-
-    .text-center-contato{
-        max-width: 1300px;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    .container-contato{
-        padding: 20px;
-        border-radius: 8px;
-        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-        width: 420px;
-        margin-left: 10px;
-    }
-    
 }
 
 @media (min-width: 1015px) and (max-width: 1200px){
@@ -944,7 +968,7 @@ input:-webkit-autofill {
 }
 
 
-@media (min-width: 1390px){
+@media (min-width: 1500px){
 
     .espaco-dicas{
         margin-right: 20px;
