@@ -16,7 +16,7 @@ html, body {
 }
 
 main {
-    padding-bottom: 250px;
+    padding-bottom: 220px;
     flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
 }
 
@@ -356,7 +356,7 @@ nav {
 
 
 .sectionroxa{
-    background-color: #b188d3;
+    background-color: #D8C7EB;
     margin-top: 3%;
     margin-bottom: 20%;
     padding-bottom: 40px;
@@ -371,7 +371,7 @@ nav {
 }
 
 .imgredonda{
-    width: 60%;
+    width: 200px;
 
 }
 
@@ -449,8 +449,8 @@ nav {
 
 /* Ajusta a imagem para não ultrapassar a tela */
 .img_sobre {
-    width: 75%; /* Faz a imagem se ajustar ao contêiner */
-    max-width: 100%; /* Garante que ela não fique maior que o esperado */
+    width: 80%; /* Faz a imagem se ajustar ao contêiner */
+    max-widh: 100%; /* Garante que ela não fique maior que o esperado */
     height: auto; /* Mantém a proporção correta */
     object-fit: contain; /* Evita cortes indesejados */
 }
