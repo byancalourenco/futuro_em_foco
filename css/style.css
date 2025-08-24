@@ -167,6 +167,40 @@ header{
     margin-top: -10px;
 }
 
+
+/*_____________css barra de pesquisa teste__________*/
+
+#form-pesquisa {
+  display: flex;            /* coloca input e botão na mesma linha */
+  align-items: center;      /* centraliza na vertical */
+  gap: 5px;                 /* espacinho entre input e botão */
+}
+
+#campo-pesquisa {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;  /* arredonda canto esquerdo */
+  flex: 1;                    /* ocupa o espaço maior */
+}
+
+.search-button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-left: none;          /* cola no input */
+  border-radius: 0 8px 8px 0; /* arredonda canto direito */
+  background: #E6DAF7;        /* cor do fundo */
+  color: #fff;
+  cursor: pointer;
+}
+
+#campo-pesquisa::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/*_________________________________________________*/
+
+
 .menu nav::after{ /* linha em baixo do menu */
     content: "";
     position: absolute;
@@ -1077,5 +1111,3 @@ input:-webkit-autofill {
 
     
 }
-
-

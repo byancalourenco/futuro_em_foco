@@ -23,7 +23,7 @@
             <div class="icons">
                 <ul>
                     <li>
-                        <a href="#" target="_blank">
+                        <a href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm " target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
@@ -54,12 +54,52 @@
                     <li><a href="dicas.html">DICAS</a></li>
                     <li><a href="contato.html">CONTATO</a></li>
                     <li>
-                        <div class="search-container">
+                        <!-- <div class="search-container">
                             <input type="search" placeholder="SEARCH">
                             <button type="submit" class="search-button">
-                                <i class="fas fa-search"></i>  <!-- Ícone de pesquisa -->
+                                <i class="fas fa-search"></i>   Ícone de pesquisa 
                             </button>
-                        </div>
+                        </div> -->
+
+                        <form id="form-pesquisa">
+                            <input type="search" id="campo-pesquisa" placeholder="SEARCH">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>   <!--Ícone de pesquisa-->
+                            </button>
+                        </form>
+
+                        <script>
+                        document.getElementById("form-pesquisa").addEventListener("submit", function(e) {
+                            e.preventDefault(); // evita recarregar a página
+
+                            let termo = document.getElementById("campo-pesquisa").value.toLowerCase();
+
+                            // pega tudo que pode ter texto relevante (títulos, parágrafos e cards)
+                            let elementos = document.querySelectorAll("h2, h3, h4, h5, p, .card");
+
+                            elementos.forEach(el => {
+                                let texto = el.innerText.toLowerCase();
+
+                                if (texto.includes(termo)) {
+                                    el.style.display = "block"; // mostra
+                                } else {
+                                    el.style.display = "none"; // esconde
+                                }
+                            });
+                        });
+                        // para não ter que apertar o botão de pesquisa
+                        document.getElementById("campo-pesquisa").addEventListener("input", function() {
+                            let termo = this.value.toLowerCase();
+                            let elementos = document.querySelectorAll("h2, h3, h4, h5, p, .card");
+
+                            elementos.forEach(el => {
+                                let texto = el.innerText.toLowerCase();
+                                el.style.display = texto.includes(termo) ? "block" : "none";
+                            });
+                        });
+                        </script>
+
+
                     </li>
                     
                 </ul>
