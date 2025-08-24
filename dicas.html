@@ -74,25 +74,31 @@
               </form>
 
               <script>
-                // Função principal de pesquisa
+                // Função de pesquisa
                 function pesquisar() {
                   let termo = document
                     .getElementById("campo-pesquisa")
                     .value.toLowerCase();
 
-                  // Seleciona todos os blocos que devem ser filtrados
-                  // Aqui consideramos os cards e também os textos grandes (sobre o projeto)
-                  let blocos = document.querySelectorAll(
-                    ".card, .section_sobre"
+                  // Seleciona todas as linhas de dicas (desktop e mobile)
+                  let blocosDesktop = document.querySelectorAll(
+                    ".sec-dicas-desktop .row"
+                  );
+                  let blocosMobile = document.querySelectorAll(
+                    ".sec-dicas-mobile .row"
                   );
 
-                  blocos.forEach((bloco) => {
-                    // Pega todo o texto dentro do bloco
+                  blocosDesktop.forEach((bloco) => {
                     let texto = bloco.innerText.toLowerCase();
-
-                    // Se incluir o termo, mostra, senão esconde
                     bloco.style.display = texto.includes(termo)
-                      ? "block"
+                      ? "flex"
+                      : "none"; // "flex" pq é row do bootstrap
+                  });
+
+                  blocosMobile.forEach((bloco) => {
+                    let texto = bloco.innerText.toLowerCase();
+                    bloco.style.display = texto.includes(termo)
+                      ? "flex"
                       : "none";
                   });
                 }
@@ -101,16 +107,14 @@
                 document
                   .getElementById("form-pesquisa")
                   .addEventListener("submit", function (e) {
-                    e.preventDefault(); // não recarrega a página
+                    e.preventDefault();
                     pesquisar();
                   });
 
-                // Pesquisa em tempo real (enquanto digita)
+                // Pesquisa em tempo real enquanto digita
                 document
                   .getElementById("campo-pesquisa")
-                  .addEventListener("input", function () {
-                    pesquisar();
-                  });
+                  .addEventListener("input", pesquisar);
               </script>
             </li>
           </ul>
@@ -127,27 +131,32 @@
     </header>
 
     <main>
-            <h2 class="titulo text-center my-5 linha">DICAS</h2>    
-            <p class="text-center mb-5">
-                Explore nossas dicas detalhadas e práticas, pensadas para te ajudar e aprimorar suas habilidades!
-            </p>
+      <h2 class="titulo text-center my-5 linha">DICAS</h2>
+      <p class="text-center mb-5">
+        Explore nossas dicas detalhadas e práticas, pensadas para te ajudar e
+        aprimorar suas habilidades!
+      </p>
 
-            <section class="sec-dicas-desktop">
-                <div class="container">
+      <section class="sec-dicas-desktop">
+        <div class="container">
+          <!-- dica #1 - esquerda -->
+          <div class="row">
+            <div class="col espaco-dicas2">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Peça recomendações de pessoas relevantes
+              </h3>
+              <p class="textos-dica-esquerda">
+                Recomendações no LinkedIn ou de empresas anteriores têm grande
+                peso para fortalecer sua imagem profissional. Peça a colegas de
+                trabalho, chefes ou até professores (caso esteja estudando) que
+                escrevam um depoimento sobre seu desempenho. Elas fornecem
+                credibilidade adicional ao seu perfil.
+              </p>
 
-                    <!-- dica #1 - esquerda -->
-                    <div class="row">
-                        <div class="col espaco-dicas2">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Peça recomendações de pessoas relevantes</h3>
-                            <p class="textos-dica-esquerda">
-                                Recomendações no LinkedIn ou de empresas anteriores  têm grande peso para fortalecer sua imagem profissional. Peça a colegas de trabalho, chefes ou até professores (caso esteja estudando) que escrevam um depoimento sobre seu desempenho. Elas fornecem credibilidade adicional ao seu perfil.
-
-                            </p>
-
-                            <!-- Botão para abrir o Primeiro Modal
+              <!-- Botão para abrir o Primeiro Modal
                             <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica1" id="btn">
                                 Mais detalhes
                             </button>
@@ -170,20 +179,23 @@
                                     </div>
                                 </div>
                             </div> -->
+            </div>
+          </div>
 
-                            
-                        </div>
-                    </div>
-    
-                    <!-- dica #2 - direita -->
-                    <div class="row">
-                        <div class="col textos-dica-direita">
-                            <h3 class="textos-dica-direita">Aposte em habilidades interpessoais</h3>
-                            <p class="textos-dica-direita">
-                                Habilidades como empatia, comunicação clara e resolução de conflitos estão sendo cada vez mais valorizadas. Busque treinamentos que desenvolvam essas competências. Uma pessoa que se dá bem com os outros pode se destacar em qualquer setor.
-                            </p>
+          <!-- dica #2 - direita -->
+          <div class="row">
+            <div class="col textos-dica-direita">
+              <h3 class="textos-dica-direita">
+                Aposte em habilidades interpessoais
+              </h3>
+              <p class="textos-dica-direita">
+                Habilidades como empatia, comunicação clara e resolução de
+                conflitos estão sendo cada vez mais valorizadas. Busque
+                treinamentos que desenvolvam essas competências. Uma pessoa que
+                se dá bem com os outros pode se destacar em qualquer setor.
+              </p>
 
-                            <!-- Botão para abrir o Segundo Modal
+              <!-- Botão para abrir o Segundo Modal
                             <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica2">
                                 Mais detalhes
                             </button>
@@ -206,124 +218,175 @@
                                     </div>
                                 </div>
                             </div> -->
+            </div>
+            <div class="col espaco-dicas">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                        </div>
-                        <div class="col espaco-dicas">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
-    
-                    <!-- dica #3 - esquerda -->
-                    <div class="row">
-                        <div class="col espaco-dicas2">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Explore micro-cursos e certificados rápidos</h3>
-                            <p class="textos-dica-esquerda">
-                                Ao invés de se concentrar apenas em diplomas formais, busque micro-cursos e certificações online (como no Coursera, Udemy ou LinkedIn Learning) que podem agregar valor imediato ao seu currículo e evidenciar que você está atualizado nas tendências do mercado.
+          <!-- dica #3 - esquerda -->
+          <div class="row">
+            <div class="col espaco-dicas2">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Explore micro-cursos e certificados rápidos
+              </h3>
+              <p class="textos-dica-esquerda">
+                Ao invés de se concentrar apenas em diplomas formais, busque
+                micro-cursos e certificações online (como no Coursera, Udemy ou
+                LinkedIn Learning) que podem agregar valor imediato ao seu
+                currículo e evidenciar que você está atualizado nas tendências
+                do mercado.
+              </p>
+            </div>
+          </div>
 
-                            </p>
-                        </div>
-                    </div>
-    
-                    <!-- dica #4 - direita -->
-                    <div class="row">
-                        <div class="col textos-dica-direita">
-                            <h3 class="textos-dica-direita">Faça cursos profissionalizantes</h3>
-                            <p class="textos-dica-direita">
-                                Investir em Cursos Profissionalizantes demonstra a sua preparação para o mundo empresarial, cursos como (Inglês, Espanhol, Cursos específicos – Gestão de Pessoas, Excel, Word e Administração) mostram sua disponibilidade para investir em si mesmo e sua ambição para manter-se atualizado
-                            </p>
-                            
-                        </div>
-                        <div class="col espaco-dicas">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
+          <!-- dica #4 - direita -->
+          <div class="row">
+            <div class="col textos-dica-direita">
+              <h3 class="textos-dica-direita">
+                Faça cursos profissionalizantes
+              </h3>
+              <p class="textos-dica-direita">
+                Investir em Cursos Profissionalizantes demonstra a sua
+                preparação para o mundo empresarial, cursos como (Inglês,
+                Espanhol, Cursos específicos – Gestão de Pessoas, Excel, Word e
+                Administração) mostram sua disponibilidade para investir em si
+                mesmo e sua ambição para manter-se atualizado
+              </p>
+            </div>
+            <div class="col espaco-dicas">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                    <!-- dica #5 - esquerda -->
-                    <div class="row">
-                        <div class="col espaco-dicas2">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Pesquise sobre a empresa</h3>
-                            <p class="textos-dica-esquerda">
-                                Antes de ir para a entrevista, é fundamental que você pesquise sobre a empresa. Conheça sua missão, visão, produtos, serviços e, se possível, suas últimas ações no mercado. Isso não só demonstra que você está interessado no cargo, mas também ajuda a alinhar suas respostas ao perfil da empresa.
-                            </p>
-                        </div>
-                    </div>
+          <!-- dica #5 - esquerda -->
+          <div class="row">
+            <div class="col espaco-dicas2">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+            <div class="col">
+              <h3 class="textos-dica-esquerda">Pesquise sobre a empresa</h3>
+              <p class="textos-dica-esquerda">
+                Antes de ir para a entrevista, é fundamental que você pesquise
+                sobre a empresa. Conheça sua missão, visão, produtos, serviços
+                e, se possível, suas últimas ações no mercado. Isso não só
+                demonstra que você está interessado no cargo, mas também ajuda a
+                alinhar suas respostas ao perfil da empresa.
+              </p>
+            </div>
+          </div>
 
-                    <!-- dica #6 - direita -->
-                    <div class="row">
-                        <div class="col textos-dica-direita">
-                            <h3 class="textos-dica-direita">Exemplifique suas experiências</h3>
-                            <p class="textos-dica-direita">
-                                É muito importante que você consiga exemplificar suas experiências de forma clara. Ao falar sobre suas habilidades ou conquistas, procure usar a técnica STAR (Situação, Tarefa, Ação, Resultado). Por exemplo, se o entrevistador perguntar sobre um projeto, explique detalhadamente o contexto, o que foi feito e o impacto do seu trabalho.
-                            </p>
-                            
-                        </div>
-                        <div class="col espaco-dicas">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
+          <!-- dica #6 - direita -->
+          <div class="row">
+            <div class="col textos-dica-direita">
+              <h3 class="textos-dica-direita">
+                Exemplifique suas experiências
+              </h3>
+              <p class="textos-dica-direita">
+                É muito importante que você consiga exemplificar suas
+                experiências de forma clara. Ao falar sobre suas habilidades ou
+                conquistas, procure usar a técnica STAR (Situação, Tarefa, Ação,
+                Resultado). Por exemplo, se o entrevistador perguntar sobre um
+                projeto, explique detalhadamente o contexto, o que foi feito e o
+                impacto do seu trabalho.
+              </p>
+            </div>
+            <div class="col espaco-dicas">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                    <!-- dica #7 - esquerda -->
-                    <div class="row">
-                        <div class="col espaco-dicas2">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Esteja pronto para falar sobre seu plano de carreira</h3>
-                            <p class="textos-dica-esquerda">
-                                Durante a entrevista, muitos recrutadores querem saber como você se vê no futuro. Eles podem perguntar sobre onde você se imagina nos próximos cinco anos ou como pretende crescer dentro da empresa. Tenha uma resposta pronta que mostre que você tem objetivos claros e um plano de carreira, mas também que está disposto a crescer e se desenvolver conforme as oportunidades se apresentem.
-                            </p>
-                        </div>
-                    </div>
+          <!-- dica #7 - esquerda -->
+          <div class="row">
+            <div class="col espaco-dicas2">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Esteja pronto para falar sobre seu plano de carreira
+              </h3>
+              <p class="textos-dica-esquerda">
+                Durante a entrevista, muitos recrutadores querem saber como você
+                se vê no futuro. Eles podem perguntar sobre onde você se imagina
+                nos próximos cinco anos ou como pretende crescer dentro da
+                empresa. Tenha uma resposta pronta que mostre que você tem
+                objetivos claros e um plano de carreira, mas também que está
+                disposto a crescer e se desenvolver conforme as oportunidades se
+                apresentem.
+              </p>
+            </div>
+          </div>
 
-                    <!-- dica #8 - direita -->
-                    <div class="row">
-                        <div class="col textos-dica-direita">
-                            <h3 class="textos-dica-direita">Valorize a escuta ativa durante a entrevista</h3>
-                            <p class="textos-dica-direita">
-                                Preste atenção plena ao que o entrevistador fala, mantendo contato visual e evitando interrupções. Demonstre interesse fazendo perguntas e confirmando informações importantes. A escuta ativa mostra respeito, ajuda a entender melhor as perguntas e permite respostas mais precisas, criando uma boa impressão profissional.
-                            </p>
-                            
-                        </div>
-                        <div class="col espaco-dicas">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
+          <!-- dica #8 - direita -->
+          <div class="row">
+            <div class="col textos-dica-direita">
+              <h3 class="textos-dica-direita">
+                Valorize a escuta ativa durante a entrevista
+              </h3>
+              <p class="textos-dica-direita">
+                Preste atenção plena ao que o entrevistador fala, mantendo
+                contato visual e evitando interrupções. Demonstre interesse
+                fazendo perguntas e confirmando informações importantes. A
+                escuta ativa mostra respeito, ajuda a entender melhor as
+                perguntas e permite respostas mais precisas, criando uma boa
+                impressão profissional.
+              </p>
+            </div>
+            <div class="col espaco-dicas">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                    <!-- dica #9 - esquerda -->
-                    <div class="row">
-                        <div class="col espaco-dicas2">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Use linguagem corporal a seu favor</h3>
-                            <p class="textos-dica-esquerda">
-                                Durante uma entrevista, a forma como você se comunica não se limita apenas ao conteúdo verbal, mas também envolve fortemente sua linguagem corporal. Manter uma postura ereta e receptiva transmite profissionalismo, autoconfiança e interesse genuíno. O contato visual, quando estabelecido de maneira natural, demonstra segurança e atenção ao que está sendo dito. Um leve sorriso pode contribuir positivamente para criar empatia e suavizar o ambiente da conversa. Além disso, o uso moderado das mãos ao falar pode ajudar a reforçar pontos importantes do seu discurso. Por outro lado, é fundamental evitar gestos excessivos, inquietações constantes ou manuseio de objetos, pois isso pode indicar ansiedade ou despreparo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+          <!-- dica #9 - esquerda -->
+          <div class="row">
+            <div class="col espaco-dicas2">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Use linguagem corporal a seu favor
+              </h3>
+              <p class="textos-dica-esquerda">
+                Durante uma entrevista, a forma como você se comunica não se
+                limita apenas ao conteúdo verbal, mas também envolve fortemente
+                sua linguagem corporal. Manter uma postura ereta e receptiva
+                transmite profissionalismo, autoconfiança e interesse genuíno. O
+                contato visual, quando estabelecido de maneira natural,
+                demonstra segurança e atenção ao que está sendo dito. Um leve
+                sorriso pode contribuir positivamente para criar empatia e
+                suavizar o ambiente da conversa. Além disso, o uso moderado das
+                mãos ao falar pode ajudar a reforçar pontos importantes do seu
+                discurso. Por outro lado, é fundamental evitar gestos
+                excessivos, inquietações constantes ou manuseio de objetos, pois
+                isso pode indicar ansiedade ou despreparo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <!-- CELULAR -->
+      <!-- CELULAR -->
 
-            <section class="sec-dicas-mobile">
-                <div class="container">
+      <section class="sec-dicas-mobile">
+        <div class="container">
+          <!-- dica #1 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Peça Recomendações de Pessoas Relevantes
+              </h3>
+              <p class="textos-dica-esquerda">
+                Recomendações no LinkedIn ou de empresas anteriores têm grande
+                peso para fortalecer sua imagem profissional. Peça a colegas de
+                trabalho, chefes ou até professores (caso esteja estudando) que
+                escrevam um depoimento sobre seu desempenho. Elas fornecem
+                credibilidade adicional ao seu perfil.
+              </p>
 
-                    <!-- dica #1 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Peça Recomendações de Pessoas Relevantes</h3>
-                            <p class="textos-dica-esquerda">
-                                Recomendações no LinkedIn ou de empresas anteriores  têm grande peso para fortalecer sua imagem profissional. Peça a colegas de trabalho, chefes ou até professores (caso esteja estudando) que escrevam um depoimento sobre seu desempenho. Elas fornecem credibilidade adicional ao seu perfil.
-                            </p>
-
-                            <!-- Botão para abrir o Primeiro Modal Mobile
+              <!-- Botão para abrir o Primeiro Modal Mobile
                             <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica1mobile">
                                 Mais detalhes
                             </button>
@@ -346,22 +409,25 @@
                                     </div>
                                 </div>
                             </div> -->
-                            
-                            
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                    <!-- dica #2 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Aposte em Habilidades Interpessoais</h3>
-                            <p class="textos-dica-esquerda">
-                                Habilidades como empatia, comunicação clara e resolução de conflitos estão sendo cada vez mais valorizadas. Busque treinamentos que desenvolvam essas competências. Uma pessoa que se dá bem com os outros pode se destacar em qualquer setor.
-                            </p>
-                            <!-- Botão para abrir o Segundo Modal Mobile
+          <!-- dica #2 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Aposte em Habilidades Interpessoais
+              </h3>
+              <p class="textos-dica-esquerda">
+                Habilidades como empatia, comunicação clara e resolução de
+                conflitos estão sendo cada vez mais valorizadas. Busque
+                treinamentos que desenvolvam essas competências. Uma pessoa que
+                se dá bem com os outros pode se destacar em qualquer setor.
+              </p>
+              <!-- Botão para abrir o Segundo Modal Mobile
                             <button type="button" class="btn btn-primary button-dicas" data-bs-toggle="modal" data-bs-target="#modalDica2mobile">
                                 Mais detalhes
                             </button>
@@ -384,116 +450,166 @@
                                     </div>
                                 </div>
                             </div> -->
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                    <!-- dica #3 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Explore Micro-Cursos e Certificados Rápidos</h3>
-                            <p class="textos-dica-esquerda">
-                                Ao invés de se concentrar apenas em diplomas formais, busque micro-cursos e certificações online (como no Coursera, Udemy ou LinkedIn Learning) que podem agregar valor imediato ao seu currículo e evidenciar que você está atualizado nas tendências do mercado.
-                            </p>
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
+          <!-- dica #3 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Explore Micro-Cursos e Certificados Rápidos
+              </h3>
+              <p class="textos-dica-esquerda">
+                Ao invés de se concentrar apenas em diplomas formais, busque
+                micro-cursos e certificações online (como no Coursera, Udemy ou
+                LinkedIn Learning) que podem agregar valor imediato ao seu
+                currículo e evidenciar que você está atualizado nas tendências
+                do mercado.
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                    <!-- dica #4 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Faça cursos profissionalizantes</h3>
-                            <p class="textos-dica-esquerda">
-                                Investir em Cursos Profissionalizantes demonstra a sua preparação para o mundo empresarial, cursos como (Inglês, Espanhol, Cursos específicos – Gestão de Pessoas, Excel, Word e Administração) mostram sua disponibilidade para investir em si mesmo e sua ambição para manter-se atualizado
-                            </p>
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
-                    <!-- dica #5 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Pesquise sobre a empresa</h3>
-                            <p class="textos-dica-esquerda">
-                                Antes de ir para a entrevista, é fundamental que você pesquise sobre a empresa. Conheça sua missão, visão, produtos, serviços e, se possível, suas últimas ações no mercado. Isso não só demonstra que você está interessado no cargo, mas também ajuda a alinhar suas respostas ao perfil da empresa.
-                            </p>
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
+          <!-- dica #4 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Faça cursos profissionalizantes
+              </h3>
+              <p class="textos-dica-esquerda">
+                Investir em Cursos Profissionalizantes demonstra a sua
+                preparação para o mundo empresarial, cursos como (Inglês,
+                Espanhol, Cursos específicos – Gestão de Pessoas, Excel, Word e
+                Administração) mostram sua disponibilidade para investir em si
+                mesmo e sua ambição para manter-se atualizado
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
+          <!-- dica #5 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">Pesquise sobre a empresa</h3>
+              <p class="textos-dica-esquerda">
+                Antes de ir para a entrevista, é fundamental que você pesquise
+                sobre a empresa. Conheça sua missão, visão, produtos, serviços
+                e, se possível, suas últimas ações no mercado. Isso não só
+                demonstra que você está interessado no cargo, mas também ajuda a
+                alinhar suas respostas ao perfil da empresa.
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                    <!-- dica #6 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Exemplifique suas experiências</h3>
-                            <p class="textos-dica-esquerda">
-                                É muito importante que você consiga exemplificar suas experiências de forma clara. Ao falar sobre suas habilidades ou conquistas, procure usar a técnica STAR (Situação, Tarefa, Ação, Resultado). Por exemplo, se o entrevistador perguntar sobre um projeto, explique detalhadamente o contexto, o que foi feito e o impacto do seu trabalho.
-                            </p>
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
-                    <!-- dica #7 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Esteja pronto para falar sobre seu plano de carreira</h3>
-                            <p class="textos-dica-esquerda">
-                                Durante a entrevista, muitos recrutadores querem saber como você se vê no futuro. Eles podem perguntar sobre onde você se imagina nos próximos cinco anos ou como pretende crescer dentro da empresa. Tenha uma resposta pronta que mostre que você tem objetivos claros e um plano de carreira, mas também que está disposto a crescer e se desenvolver conforme as oportunidades se apresentem.
-                            </p>
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
+          <!-- dica #6 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Exemplifique suas experiências
+              </h3>
+              <p class="textos-dica-esquerda">
+                É muito importante que você consiga exemplificar suas
+                experiências de forma clara. Ao falar sobre suas habilidades ou
+                conquistas, procure usar a técnica STAR (Situação, Tarefa, Ação,
+                Resultado). Por exemplo, se o entrevistador perguntar sobre um
+                projeto, explique detalhadamente o contexto, o que foi feito e o
+                impacto do seu trabalho.
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
+          <!-- dica #7 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Esteja pronto para falar sobre seu plano de carreira
+              </h3>
+              <p class="textos-dica-esquerda">
+                Durante a entrevista, muitos recrutadores querem saber como você
+                se vê no futuro. Eles podem perguntar sobre onde você se imagina
+                nos próximos cinco anos ou como pretende crescer dentro da
+                empresa. Tenha uma resposta pronta que mostre que você tem
+                objetivos claros e um plano de carreira, mas também que está
+                disposto a crescer e se desenvolver conforme as oportunidades se
+                apresentem.
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
 
-                    <!-- dica #8 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Valorize a escuta ativa durante a entrevista</h3>
-                            <p class="textos-dica-esquerda">
-                                Preste atenção plena ao que o entrevistador fala, mantendo contato visual e evitando interrupções. Demonstre interesse fazendo perguntas e confirmando informações importantes. A escuta ativa mostra respeito, ajuda a entender melhor as perguntas e permite respostas mais precisas, criando uma boa impressão profissional.
-                            </p>
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
-                    <!-- dica #9 -->
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="textos-dica-esquerda">Use linguagem corporal a seu favor</h3>
-                            <p class="textos-dica-esquerda">
-                                Durante uma entrevista, a forma como você se comunica não se limita apenas ao conteúdo verbal, mas também envolve fortemente sua linguagem corporal. Manter uma postura ereta e receptiva transmite profissionalismo, autoconfiança e interesse genuíno. O contato visual, quando estabelecido de maneira natural, demonstra segurança e atenção ao que está sendo dito. Um leve sorriso pode contribuir positivamente para criar empatia e suavizar o ambiente da conversa. Além disso, o uso moderado das mãos ao falar pode ajudar a reforçar pontos importantes do seu discurso. Por outro lado, é fundamental evitar gestos excessivos, inquietações constantes ou manuseio de objetos, pois isso pode indicar ansiedade ou despreparo.
-                            </p>
-                        </div>
-                        <div class="col">
-                            <img class="img-dicas" src="img/img-homem-aranha.png" alt="">
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-        </main>
+          <!-- dica #8 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Valorize a escuta ativa durante a entrevista
+              </h3>
+              <p class="textos-dica-esquerda">
+                Preste atenção plena ao que o entrevistador fala, mantendo
+                contato visual e evitando interrupções. Demonstre interesse
+                fazendo perguntas e confirmando informações importantes. A
+                escuta ativa mostra respeito, ajuda a entender melhor as
+                perguntas e permite respostas mais precisas, criando uma boa
+                impressão profissional.
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
+          <!-- dica #9 -->
+          <div class="row">
+            <div class="col">
+              <h3 class="textos-dica-esquerda">
+                Use linguagem corporal a seu favor
+              </h3>
+              <p class="textos-dica-esquerda">
+                Durante uma entrevista, a forma como você se comunica não se
+                limita apenas ao conteúdo verbal, mas também envolve fortemente
+                sua linguagem corporal. Manter uma postura ereta e receptiva
+                transmite profissionalismo, autoconfiança e interesse genuíno. O
+                contato visual, quando estabelecido de maneira natural,
+                demonstra segurança e atenção ao que está sendo dito. Um leve
+                sorriso pode contribuir positivamente para criar empatia e
+                suavizar o ambiente da conversa. Além disso, o uso moderado das
+                mãos ao falar pode ajudar a reforçar pontos importantes do seu
+                discurso. Por outro lado, é fundamental evitar gestos
+                excessivos, inquietações constantes ou manuseio de objetos, pois
+                isso pode indicar ansiedade ou despreparo.
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-dicas" src="img/img-homem-aranha.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="rodape_redondo">
-        <div class="centraliza">
-            <img class="img_footer" src="img/logo-principal.png" alt="">
-            <nav>
-                <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
-                <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
-                <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
-                <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
-                <a class="menu_rodape" href="dicas.html">DICAS</a>
-                <a class="menu_rodape" href="contato.html">CONTATO</a>
-            </nav>
-        </div>
+      <div class="centraliza">
+        <img class="img_footer" src="img/logo-principal.png" alt="" />
+        <nav>
+          <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
+          <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
+          <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
+          <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
+          <a class="menu_rodape" href="dicas.html">DICAS</a>
+          <a class="menu_rodape" href="contato.html">CONTATO</a>
+        </nav>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

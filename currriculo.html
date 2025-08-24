@@ -74,23 +74,19 @@
               </form>
 
               <script>
-                // Função principal de pesquisa
+                // Função de pesquisa
                 function pesquisar() {
                   let termo = document
                     .getElementById("campo-pesquisa")
                     .value.toLowerCase();
 
-                  // Seleciona todos os blocos que devem ser filtrados
-                  // Aqui consideramos os cards e também os textos grandes (sobre o projeto)
+                  // Seleciona todos os elementos que queremos filtrar
                   let blocos = document.querySelectorAll(
-                    ".card, .section_sobre"
+                    ".textocurriculo, .container .row"
                   );
 
                   blocos.forEach((bloco) => {
-                    // Pega todo o texto dentro do bloco
                     let texto = bloco.innerText.toLowerCase();
-
-                    // Se incluir o termo, mostra, senão esconde
                     bloco.style.display = texto.includes(termo)
                       ? "block"
                       : "none";
@@ -101,16 +97,14 @@
                 document
                   .getElementById("form-pesquisa")
                   .addEventListener("submit", function (e) {
-                    e.preventDefault(); // não recarrega a página
+                    e.preventDefault();
                     pesquisar();
                   });
 
-                // Pesquisa em tempo real (enquanto digita)
+                // Pesquisa em tempo real enquanto digita
                 document
                   .getElementById("campo-pesquisa")
-                  .addEventListener("input", function () {
-                    pesquisar();
-                  });
+                  .addEventListener("input", pesquisar);
               </script>
             </li>
           </ul>
@@ -126,41 +120,46 @@
       </script>
     </header>
     <main>
-        <h2 class="titulo text-center my-5 linha">CURRÍCULO</h2>
-        <div class="container text-center">
-            <div class="row">
-              <div class="col-md-6 col-sm-12">
-                <img class="excurriculo" src="img/curriculocorreto.png" alt="">
-                <p>CORRETO</p>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <img class="excurriculo" src="img/curriculoincorreto.png" alt="">
-                <p>INCORRETO</p>
-              </div>
-            </div>
+      <h2 class="titulo text-center my-5 linha">CURRÍCULO</h2>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <img class="excurriculo" src="img/curriculocorreto.png" alt="" />
+            <p>CORRETO</p>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <img class="excurriculo" src="img/curriculoincorreto.png" alt="" />
+            <p>INCORRETO</p>
+          </div>
         </div>
-        <div class="textocurriculo">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo ut suscipit varius, libero felis 
-                consequat lorem, nec tincidunt erat nunc at elit. Integer sit amet metus ac turpis faucibus luctus. Fusce tristique, neque et 
-                vestibulum scelerisque, mauris turpis tristique turpiLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. 
-                Curabitur auctor, justo ut suscipit varius, libero felis consequat lorem, nec tincidunt erat nunc at elit. Integer sit amet metus 
-                ac turpis faucibus luctus. Fusce tristique, neque et vestibulum scelerisque, mauris turpis tristique turpi</p>
-        </div>
-        
-
+      </div>
+      <div class="textocurriculo">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          facilisi. Curabitur auctor, justo ut suscipit varius, libero felis
+          consequat lorem, nec tincidunt erat nunc at elit. Integer sit amet
+          metus ac turpis faucibus luctus. Fusce tristique, neque et vestibulum
+          scelerisque, mauris turpis tristique turpiLorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Nulla facilisi. Curabitur auctor, justo
+          ut suscipit varius, libero felis consequat lorem, nec tincidunt erat
+          nunc at elit. Integer sit amet metus ac turpis faucibus luctus. Fusce
+          tristique, neque et vestibulum scelerisque, mauris turpis tristique
+          turpi
+        </p>
+      </div>
     </main>
     <footer class="rodape_redondo">
-        <div class="centraliza">
-            <img class="img_footer" src="img/logo-principal.png" alt="">
-            <nav>
-                <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
-                <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
-                <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
-                <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
-                <a class="menu_rodape" href="dicas.html">DICAS</a>
-                <a class="menu_rodape" href="contato.html">CONTATO</a>
-            </nav>
-        </div>
+      <div class="centraliza">
+        <img class="img_footer" src="img/logo-principal.png" alt="" />
+        <nav>
+          <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
+          <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
+          <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
+          <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
+          <a class="menu_rodape" href="dicas.html">DICAS</a>
+          <a class="menu_rodape" href="contato.html">CONTATO</a>
+        </nav>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
