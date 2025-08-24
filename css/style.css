@@ -16,6 +16,7 @@ html, body {
 }
 
 main {
+    padding-bottom: 250px;
     flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
 }
 

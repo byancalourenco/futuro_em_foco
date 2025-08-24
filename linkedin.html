@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Futuro em foco</title>
     <!-- css -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
 
     <!-- link cdn icones - fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <header>
+      <div class="parte-roxa">
+        <div class="logo">
+          <img src="img/logo-ff.png" alt="" />
+        </div>
 
-       <div class="parte-roxa">
+        <div class="icons">
+          <ul>
+            <li>
+              <a
+                href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm "
+                target="_blank"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <i class="fa-regular fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <button class="menu-toggle" aria-label="Abrir menu">
+                <span><i class="fa-solid fa-bars"></i></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-            <div class="logo">
-               <img src="img/logo-ff.png" alt="">
-            </div>
-
-            <div class="icons">
-                <ul>
-                    <li>
-                        <a href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm " target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-regular fa-envelope"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <button class="menu-toggle" aria-label="Abrir menu">
-                            <span><i class="fa-solid fa-bars"></i></span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-
-       </div>
-
-       <div class="menu">
-
-            <nav class="menu-desktop">
-
-                <ul>
-                    <li><a href="sobre.html">SOBRE O PROJETO</a></li>
-                    <li><a href="entrevista.html">ENTREVISTA</a></li>
-                    <li><a href="linkedin.html">LINKEDIN</a></li>
-                    <li><a href="currriculo.html">CURRÍCULO</a></li>
-                    <li><a href="dicas.html">DICAS</a></li>
-                    <li><a href="contato.html">CONTATO</a></li>
-                    <li>
-                        <!-- <div class="search-container">
+      <div class="menu">
+        <nav class="menu-desktop">
+          <ul>
+            <li><a href="sobre.html">SOBRE O PROJETO</a></li>
+            <li><a href="entrevista.html">ENTREVISTA</a></li>
+            <li><a href="linkedin.html">LINKEDIN</a></li>
+            <li><a href="currriculo.html">CURRÍCULO</a></li>
+            <li><a href="dicas.html">DICAS</a></li>
+            <li><a href="contato.html">CONTATO</a></li>
+            <li>
+              <!-- <div class="search-container">
                             <input type="search" placeholder="SEARCH">
                             <button type="submit" class="search-button">
                                 <i class="fas fa-search"></i>   Ícone de pesquisa 
                             </button>
                         </div> -->
 
-                        <form id="form-pesquisa">
-                            <input type="search" id="campo-pesquisa" placeholder="SEARCH">
-                            <button type="submit" class="search-button">
-                                <i class="fas fa-search"></i>   <!--Ícone de pesquisa-->
-                            </button>
-                        </form>
+              <form id="form-pesquisa">
+                <input type="search" id="campo-pesquisa" placeholder="SEARCH" />
+                <button type="submit" class="search-button">
+                  <i class="fas fa-search"></i>
+                  <!--Ícone de pesquisa-->
+                </button>
+              </form>
 
-                         <script>
+              <!-- DIFERENTE DAS OUTRAS PAGINAS - ESTE É PERSONALIZADO, AS OUTRAS SÃO UNIVERSAL!!!! -->
+              <script>
                 // Função principal de pesquisa
                 function pesquisar() {
                   let termo = document
@@ -122,85 +128,147 @@
     </header>
 
     <main>
-        <h3 class="titulo text-center my-5">COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?</h3>
-        <p class=" linkedip text-center">Snoopy, o icônico beagle criado por Charles M. Schulz, é um dos personagens mais amados e reconhecíveis do universo dos quadrinhos. Aparecendo pela primeira vez em 1950, nas tiras de "Peanuts", Snoopy rapidamente se tornou um símbolo de personalidade e estilo único, transcendendo o mundo dos quadrinhos para se tornar uma figura de referência na cultura pop. Sua característica mais marcante é a sua imaginação exuberante, que o leva a viver aventuras fantásticas em sua mente, seja como o ousado aviador da Primeira Guerra Mundial, desafiando o Barão Vermelho, ou como um escritor tentando criar sua grande obra literária. Snoopy também é notório por sua relação com seu dono, Charlie Brown, a quem observa com uma mistura de carinho e um tanto de ceticismo, sempre de uma forma sarcástica e espirituosa. Embora seja um cão, Snoopy não segue os padrões tradicionais de comportamento canino; ele se vê como um ser superior, frequentemente em conflito com os limites do seu corpo e a sua natureza. Sua filosofia de vida, marcada pela busca por prazer e pela recusa em seguir regras convencionais, reflete as complexidades da própria existência humana, algo que faz com que leitores de todas as idades se identifiquem com ele. </p>
-        <section class="video-linkedin">
-            <div class="container text-center">
-                
-                
-                <div class="d-flex justify-content-center">
-                    <div class="video-container" style="position: relative; width: 80%; padding-bottom: 45%; height: 0; overflow: hidden;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/pV5Nd2g_A5M?si=nQK1oY3yLL-oE0O8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
+      <h3 class="titulo text-center my-5">
+        COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?
+      </h3>
+      <p class="linkedip text-center">
+        Snoopy, o icônico beagle criado por Charles M. Schulz, é um dos
+        personagens mais amados e reconhecíveis do universo dos quadrinhos.
+        Aparecendo pela primeira vez em 1950, nas tiras de "Peanuts", Snoopy
+        rapidamente se tornou um símbolo de personalidade e estilo único,
+        transcendendo o mundo dos quadrinhos para se tornar uma figura de
+        referência na cultura pop. Sua característica mais marcante é a sua
+        imaginação exuberante, que o leva a viver aventuras fantásticas em sua
+        mente, seja como o ousado aviador da Primeira Guerra Mundial, desafiando
+        o Barão Vermelho, ou como um escritor tentando criar sua grande obra
+        literária. Snoopy também é notório por sua relação com seu dono, Charlie
+        Brown, a quem observa com uma mistura de carinho e um tanto de
+        ceticismo, sempre de uma forma sarcástica e espirituosa. Embora seja um
+        cão, Snoopy não segue os padrões tradicionais de comportamento canino;
+        ele se vê como um ser superior, frequentemente em conflito com os
+        limites do seu corpo e a sua natureza. Sua filosofia de vida, marcada
+        pela busca por prazer e pela recusa em seguir regras convencionais,
+        reflete as complexidades da própria existência humana, algo que faz com
+        que leitores de todas as idades se identifiquem com ele.
+      </p>
+      <section class="video-linkedin">
+        <div class="container text-center">
+          <div class="d-flex justify-content-center">
+            <div
+              class="video-container"
+              style="
+                position: relative;
+                width: 80%;
+                padding-bottom: 45%;
+                height: 0;
+                overflow: hidden;
+              "
+            >
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/pV5Nd2g_A5M?si=nQK1oY3yLL-oE0O8"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
+      <section class="bannerlinkedin container-fluid">
+        <div class="container text-center">
+          <div class="row justify-content-center align-items-center">
+            <div
+              class="col-md-6 d-flex justify-content-center align-items-center"
+            >
+              <img
+                src="img/linkedinesnupi.png"
+                alt="Descrição da Imagem"
+                class="img-fluid linkedinimg"
+              />
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+              <h4 class="linkedinh4 text-start">
+                "Eu sou um grande crente em sorte... a sorte do Charlie Brown é
+                que ele sempre tem a chance de tentar novamente." — Charles
+                Schulz
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="bannerlinkedin container-fluid">
-            <div class="container text-center">
-                <div class="row justify-content-center align-items-center">
-                  <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <img src="img/linkedinesnupi.png" alt="Descrição da Imagem" class="img-fluid linkedinimg">
-                  </div>
-                  <div class="col-md-6 d-flex justify-content-center">
-                    <h4 class="linkedinh4 text-start">"Eu sou um grande crente em sorte... a sorte do Charlie Brown é que ele sempre tem a chance de tentar novamente." — Charles Schulz</h4>
-                  </div>
-                </div>
-              </div>
-
-        </section>
-
-        <h3 class="titulo text-center my-5">COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?</h3>
-        <section class="sectiontimeline">
-            <ul class="ultimeline">
-                <li class="litimeline" style="--accent-color:#41516C">
-                    <div class="date">FORMAÇÃO</div>
-                    <div class="title">Title 1</div>
-                    <div class="descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, cumque.</div>
-                </li>
-                <li class="litimeline" style="--accent-color:#FBCA3E">
-                    <div class="date">FORMAÇÃO</div>
-                    <div class="title">Title 2</div>
-                    <div class="descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos adipisci nobis nostrum vero nihil veniam.</div>
-                </li>
-                <li class="litimeline" style="--accent-color:#E24A68">
-                    <div class="date">FORMAÇÃO</div>
-                    <div class="title">Title 3</div>
-                    <div class="descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, cumque.</div>
-                </li>
-                <li class="litimeline" style="--accent-color:#1B5F8C">
-                    <div class="date">FORMAÇÃO</div>
-                    <div class="title">Title 4</div>
-                    <div class="descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, cumque.</div>
-                </li>
-                <li class="litimeline" style="--accent-color:#4CADAD">
-                    <div class="date">FORMAÇÃO</div>
-                    <div class="title">Title 5</div>
-                    <div class="descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.</div>
-                </li>
-            </ul>
-
-        </section>
-
-    
-
+      <h3 class="titulo text-center my-5">
+        COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?
+      </h3>
+      <section class="sectiontimeline">
+        <ul class="ultimeline">
+          <li class="litimeline" style="--accent-color: #41516c">
+            <div class="date">FORMAÇÃO</div>
+            <div class="title">Title 1</div>
+            <div class="descr">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
+              cumque.
+            </div>
+          </li>
+          <li class="litimeline" style="--accent-color: #fbca3e">
+            <div class="date">FORMAÇÃO</div>
+            <div class="title">Title 2</div>
+            <div class="descr">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
+              adipisci nobis nostrum vero nihil veniam.
+            </div>
+          </li>
+          <li class="litimeline" style="--accent-color: #e24a68">
+            <div class="date">FORMAÇÃO</div>
+            <div class="title">Title 3</div>
+            <div class="descr">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
+              cumque.
+            </div>
+          </li>
+          <li class="litimeline" style="--accent-color: #1b5f8c">
+            <div class="date">FORMAÇÃO</div>
+            <div class="title">Title 4</div>
+            <div class="descr">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
+              cumque.
+            </div>
+          </li>
+          <li class="litimeline" style="--accent-color: #4cadad">
+            <div class="date">FORMAÇÃO</div>
+            <div class="title">Title 5</div>
+            <div class="descr">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              non.
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
 
     <footer class="rodape_redondo">
-        <div class="centraliza text-center">
-            <img class="img_footer" src="img/logo-principal.png" alt="Logo Futuro em Foco">
-            <nav>
-                <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
-                <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
-                <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
-                <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
-                <a class="menu_rodape" href="dicas.html">DICAS</a>
-                <a class="menu_rodape" href="contato.html">CONTATO</a>
-            </nav>
-        </div>
+      <div class="centraliza text-center">
+        <img
+          class="img_footer"
+          src="img/logo-principal.png"
+          alt="Logo Futuro em Foco"
+        />
+        <nav>
+          <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
+          <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
+          <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
+          <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
+          <a class="menu_rodape" href="dicas.html">DICAS</a>
+          <a class="menu_rodape" href="contato.html">CONTATO</a>
+        </nav>
+      </div>
     </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>

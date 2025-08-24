@@ -74,56 +74,42 @@
               </form>
 
               <script>
-                // Função principal de pesquisa
-                function pesquisar() {
-                  let termo = document
-                    .getElementById("campo-pesquisa")
-                    .value.toLowerCase();
+                  // Script de pesquisa universal
+                  (function() {
+                    const formPesquisa = document.getElementById("form-pesquisa");
+                    const campoPesquisa = document.getElementById("campo-pesquisa");
 
-                  // Seleciona todos os blocos que devem ser filtrados
-                  // Aqui consideramos os cards e também os textos grandes (sobre o projeto)
-                  let blocos = document.querySelectorAll(
-                    ".card, .section_sobre"
-                  );
+                    if (!formPesquisa || !campoPesquisa) return;
 
-                  blocos.forEach((bloco) => {
-                    // Pega todo o texto dentro do bloco
-                    let texto = bloco.innerText.toLowerCase();
+                    function pesquisar() {
+                      const termo = campoPesquisa.value.toLowerCase();
+                      
+                      // Seleciona todos os blocos que você quer filtrar
+                      // Aqui incluí cards, seções e linhas do bootstrap
+                      const blocos = document.querySelectorAll(".card, .section_sobre, .row, .textocurriculo, .sec-dicas-desktop .row, .sec-dicas-mobile .row");
 
-                    // Se incluir o termo, mostra, senão esconde
-                    bloco.style.display = texto.includes(termo)
-                      ? "block"
-                      : "none";
-                  });
-                }
+                      blocos.forEach(bloco => {
+                        const texto = bloco.innerText.toLowerCase();
+                        // Define display correto conforme o tipo de container
+                        if (bloco.classList.contains("row") || bloco.classList.contains("sec-dicas-desktop") || bloco.classList.contains("sec-dicas-mobile")) {
+                          bloco.style.display = texto.includes(termo) ? "flex" : "none";
+                        } else {
+                          bloco.style.display = texto.includes(termo) ? "block" : "none";
+                        }
+                      });
+                    }
 
-                // Pesquisa ao apertar Enter
-                document
-                  .getElementById("form-pesquisa")
-                  .addEventListener("submit", function (e) {
-                    e.preventDefault(); // não recarrega a página
-                    pesquisar();
-                  });
+                    // Pesquisa ao apertar Enter
+                    formPesquisa.addEventListener("submit", function(e) {
+                      e.preventDefault();
+                      pesquisar();
+                    });
 
-                // Pesquisa em tempo real (enquanto digita)
-                document
-                  .getElementById("campo-pesquisa")
-                  .addEventListener("input", function () {
-                    pesquisar();
-                  });
+                    // Pesquisa em tempo real enquanto digita
+                    campoPesquisa.addEventListener("input", pesquisar);
+                  })();
               </script>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <script>
-        const menuToggle = document.querySelector(".menu-toggle");
-        const menuDesktop = document.querySelector(".menu-desktop");
 
-        menuToggle.addEventListener("click", () => {
-          menuDesktop.classList.toggle("active"); // Alterna a classe 'active' para abrir/fechar o menu
-        });
-      </script>
     </header>
 
     <main>
