@@ -470,7 +470,7 @@ nav {
 }
 .section_sobre_dois{
     display: flex;
-    max-height: 250px; 
+    max-height: 350px; 
     margin-top: 20%;
     background-color: #c9aedfa9;
     justify-content: space-around; /* Espaçamento uniforme entre os cards */
@@ -479,7 +479,7 @@ nav {
 
 .card_sobre{
     background-color: #fbf7ff;
-    border-radius: 10%; 
+    border-radius: 20px; 
     box-shadow: 4px 4px 10px rgba(129, 35, 236, 0.5);
 }
 
@@ -493,12 +493,21 @@ nav {
     transition: all 0.3s ease;
 }
 
-.card_ani :hover{
-    transform: scale(1.1);
+.card_ani:hover {
+    transform: scale(1.08) translateY(-5px); /* cresce + dá leve subida */
+    box-shadow: 8px 12px 25px rgba(129, 35, 236, 0.35);
 }
 
 .baixo{
     margin-bottom: 150px !important;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+:target{
+  scroll-margin-top: 200px;
 }
 
 /*___________________________________________________________________________________________________*/    
