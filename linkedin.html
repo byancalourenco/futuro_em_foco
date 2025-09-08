@@ -1,274 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Futuro em foco</title>
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <!-- link cdn icones - fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="parte-roxa">
-        <div class="logo">
-          <img src="img/logo-ff.png" alt="" />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futuro em foco</title>
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-        <div class="icons">
-          <ul>
-            <li>
-              <a
-                href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm "
-                target="_blank"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-                <i class="fa-regular fa-envelope"></i>
-              </a>
-            </li>
-            <li>
-              <button class="menu-toggle" aria-label="Abrir menu">
-                <span><i class="fa-solid fa-bars"></i></span>
-              </button>
-            </li>
-          </ul>
-        </div>
+  <!-- link cdn icones - fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <div class="parte-roxa">
+      <div class="logo">
+        <img src="img/logo-ff.png" alt="" />
       </div>
 
-      <div class="menu">
-        <nav class="menu-desktop">
-          <ul>
-            <li><a href="sobre.html">SOBRE O PROJETO</a></li>
-            <li><a href="entrevista.html">ENTREVISTA</a></li>
-            <li><a href="linkedin.html">LINKEDIN</a></li>
-            <li><a href="currriculo.html">CURRÍCULO</a></li>
-            <li><a href="dicas.html">DICAS</a></li>
-            <li><a href="contato.html">CONTATO</a></li>
-            <li>
-              <!-- <div class="search-container">
+      <div class="icons">
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm "
+              target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <button class="menu-toggle" aria-label="Abrir menu">
+              <span><i class="fa-solid fa-bars"></i></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="menu">
+      <nav class="menu-desktop">
+        <ul>
+          <li><a href="sobre.html">SOBRE O PROJETO</a></li>
+          <!-- <li><a href="entrevista.html">ENTREVISTA</a></li> -->
+          <li><a href="linkedin.html">LINKEDIN</a></li>
+          <li><a href="currriculo.html">CURRÍCULO</a></li>
+          <li><a href="dicas.html">DICAS</a></li>
+          <li><a href="contato.html">CONTATO</a></li>
+          <li>
+            <!-- <div class="search-container">
                             <input type="search" placeholder="SEARCH">
                             <button type="submit" class="search-button">
                                 <i class="fas fa-search"></i>   Ícone de pesquisa 
                             </button>
                         </div> -->
 
-              <form id="form-pesquisa">
-                <input type="search" id="campo-pesquisa" placeholder="SEARCH" />
-                <button type="submit" class="search-button">
-                  <i class="fas fa-search"></i>
-                  <!--Ícone de pesquisa-->
-                </button>
-              </form>
+            <form id="form-pesquisa">
+              <input type="search" id="campo-pesquisa" placeholder="SEARCH" />
+              <button type="submit" class="search-button">
+                <i class="fas fa-search"></i>
+                <!--Ícone de pesquisa-->
+              </button>
+            </form>
 
-              <!-- DIFERENTE DAS OUTRAS PAGINAS - ESTE É PERSONALIZADO, AS OUTRAS SÃO UNIVERSAL!!!! -->
-              <script>
-                // Função principal de pesquisa
-                function pesquisar() {
-                  let termo = document
-                    .getElementById("campo-pesquisa")
-                    .value.toLowerCase();
-
-                  // Seleciona todos os blocos que devem ser filtrados
-                  // Aqui consideramos os cards e também os textos grandes (sobre o projeto)
-                  let blocos = document.querySelectorAll(
-                    ".card, .section_sobre, .video-linkedin, .bannerlinkedin, .sectiontimeline, h3, p"
-                  );
-
-                  blocos.forEach((bloco) => {
-                    // Pega todo o texto dentro do bloco
-                    let texto = bloco.innerText.toLowerCase();
-
-                    // Se incluir o termo, mostra, senão esconde
-                    bloco.style.display = texto.includes(termo)
-                      ? "block"
-                      : "none";
-                  });
-                }
-
-                // Pesquisa ao apertar Enter
-                document
-                  .getElementById("form-pesquisa")
-                  .addEventListener("submit", function (e) {
-                    e.preventDefault(); // não recarrega a página
-                    pesquisar();
-                  });
-
-                // Pesquisa em tempo real (enquanto digita)
-                document
+            <!-- DIFERENTE DAS OUTRAS PAGINAS - ESTE É PERSONALIZADO, AS OUTRAS SÃO UNIVERSAL!!!! -->
+            <script>
+              // Função principal de pesquisa
+              function pesquisar() {
+                let termo = document
                   .getElementById("campo-pesquisa")
-                  .addEventListener("input", function () {
-                    pesquisar();
-                  });
-              </script>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <script>
-        const menuToggle = document.querySelector(".menu-toggle");
-        const menuDesktop = document.querySelector(".menu-desktop");
+                  .value.toLowerCase();
 
-        menuToggle.addEventListener("click", () => {
-          menuDesktop.classList.toggle("active"); // Alterna a classe 'active' para abrir/fechar o menu
-        });
-      </script>
-    </header>
+                // Seleciona todos os blocos que devem ser filtrados
+                // Aqui consideramos os cards e também os textos grandes (sobre o projeto)
+                let blocos = document.querySelectorAll(
+                  ".card, .section_sobre, .video-linkedin, .bannerlinkedin, .sectiontimeline, h3, p"
+                );
 
-    <main>
-      <h3 class="titulo text-center my-5">
-        COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?
-      </h3>
-      <p class="linkedip text-center">
-        Snoopy, o icônico beagle criado por Charles M. Schulz, é um dos
-        personagens mais amados e reconhecíveis do universo dos quadrinhos.
-        Aparecendo pela primeira vez em 1950, nas tiras de "Peanuts", Snoopy
-        rapidamente se tornou um símbolo de personalidade e estilo único,
-        transcendendo o mundo dos quadrinhos para se tornar uma figura de
-        referência na cultura pop. Sua característica mais marcante é a sua
-        imaginação exuberante, que o leva a viver aventuras fantásticas em sua
-        mente, seja como o ousado aviador da Primeira Guerra Mundial, desafiando
-        o Barão Vermelho, ou como um escritor tentando criar sua grande obra
-        literária. Snoopy também é notório por sua relação com seu dono, Charlie
-        Brown, a quem observa com uma mistura de carinho e um tanto de
-        ceticismo, sempre de uma forma sarcástica e espirituosa. Embora seja um
-        cão, Snoopy não segue os padrões tradicionais de comportamento canino;
-        ele se vê como um ser superior, frequentemente em conflito com os
-        limites do seu corpo e a sua natureza. Sua filosofia de vida, marcada
-        pela busca por prazer e pela recusa em seguir regras convencionais,
-        reflete as complexidades da própria existência humana, algo que faz com
-        que leitores de todas as idades se identifiquem com ele.
-      </p>
-      <section class="video-linkedin">
-        <div class="container text-center">
-          <div class="d-flex justify-content-center">
-            <div
-              class="video-container"
-              style="
-                position: relative;
-                width: 80%;
-                padding-bottom: 45%;
-                height: 0;
-                overflow: hidden;
-              "
-            >
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/pV5Nd2g_A5M?si=nQK1oY3yLL-oE0O8"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
+                blocos.forEach((bloco) => {
+                  // Pega todo o texto dentro do bloco
+                  let texto = bloco.innerText.toLowerCase();
 
-      <section class="bannerlinkedin container-fluid">
-        <div class="container text-center">
-          <div class="row justify-content-center align-items-center">
-            <div
-              class="col-md-6 d-flex justify-content-center align-items-center"
-            >
-              <img
-                src="img/linkedinesnupi.png"
-                alt="Descrição da Imagem"
-                class="img-fluid linkedinimg"
-              />
-            </div>
-            <div class="col-md-6 d-flex justify-content-center">
-              <h4 class="linkedinh4 text-start">
-                "Eu sou um grande crente em sorte... a sorte do Charlie Brown é
-                que ele sempre tem a chance de tentar novamente." — Charles
-                Schulz
-              </h4>
-            </div>
-          </div>
-        </div>
-      </section>
+                  // Se incluir o termo, mostra, senão esconde
+                  bloco.style.display = texto.includes(termo)
+                    ? "block"
+                    : "none";
+                });
+              }
 
-      <h3 class="titulo text-center my-5">
-        COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?
-      </h3>
-      <section class="sectiontimeline">
-        <ul class="ultimeline">
-          <li class="litimeline" style="--accent-color: #41516c">
-            <div class="date">FORMAÇÃO</div>
-            <div class="title">Title 1</div>
-            <div class="descr">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
-              cumque.
-            </div>
-          </li>
-          <li class="litimeline" style="--accent-color: #fbca3e">
-            <div class="date">FORMAÇÃO</div>
-            <div class="title">Title 2</div>
-            <div class="descr">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
-              adipisci nobis nostrum vero nihil veniam.
-            </div>
-          </li>
-          <li class="litimeline" style="--accent-color: #e24a68">
-            <div class="date">FORMAÇÃO</div>
-            <div class="title">Title 3</div>
-            <div class="descr">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
-              cumque.
-            </div>
-          </li>
-          <li class="litimeline" style="--accent-color: #1b5f8c">
-            <div class="date">FORMAÇÃO</div>
-            <div class="title">Title 4</div>
-            <div class="descr">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
-              cumque.
-            </div>
-          </li>
-          <li class="litimeline" style="--accent-color: #4cadad">
-            <div class="date">FORMAÇÃO</div>
-            <div class="title">Title 5</div>
-            <div class="descr">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
-              non.
-            </div>
+              // Pesquisa ao apertar Enter
+              document
+                .getElementById("form-pesquisa")
+                .addEventListener("submit", function (e) {
+                  e.preventDefault(); // não recarrega a página
+                  pesquisar();
+                });
+
+              // Pesquisa em tempo real (enquanto digita)
+              document
+                .getElementById("campo-pesquisa")
+                .addEventListener("input", function () {
+                  pesquisar();
+                });
+            </script>
           </li>
         </ul>
-      </section>
-    </main>
+      </nav>
+    </div>
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menuDesktop = document.querySelector(".menu-desktop");
 
-    <footer class="rodape_redondo">
-      <div class="centraliza text-center">
-        <img
-          class="img_footer"
-          src="img/logo-principal.png"
-          alt="Logo Futuro em Foco"
-        />
-        <nav>
-          <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
-          <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
-          <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
-          <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
-          <a class="menu_rodape" href="dicas.html">DICAS</a>
-          <a class="menu_rodape" href="contato.html">CONTATO</a>
-        </nav>
+      menuToggle.addEventListener("click", () => {
+        menuDesktop.classList.toggle("active"); // Alterna a classe 'active' para abrir/fechar o menu
+      });
+    </script>
+  </header>
+
+  <main>
+    <div class=" container text-center">
+      <h3 class="titulo text-center my-5">COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?</h3>
+
+      <p>
+        <strong>Criar uma conta no LinkedIn é o primeiro passo para entrar de verdade no mundo profissional.</strong>
+        A plataforma funciona como um currículo digital, mas também é um espaço para mostrar quem você é,
+        o que já aprendeu, no que está se desenvolvendo e quais são seus sonhos para o futuro.
+      </p>
+
+      <p>
+        <strong>Para começar, é simples:</strong> acesse o site ou baixe o aplicativo no celular, clique em
+        “Cadastre-se”
+        e preencha seu e-mail, crie uma senha segura e informe seus dados básicos, como nome, país, cidade e ocupação
+        atual
+        — mesmo que você ainda seja estudante. Depois disso, é só confirmar seu e-mail com o código enviado e sua conta
+        estará pronta para ser personalizada.
+      </p>
+
+      <p>
+        <strong>Agora vem a parte mais importante: montar um perfil campeão.</strong> Comece escolhendo uma foto com boa
+        iluminação e que transmita simpatia e profissionalismo. No título do perfil, escreva de forma objetiva quem você
+        é
+        ou o que está buscando, como por exemplo:
+      </p>
+      <ul class="list-unstyled">
+        <li>“Estudante em busca da primeira oportunidade”</li>
+        <li>“Jovem Aprendiz interessado em tecnologia”</li>
+      </ul>
+
+      <p>
+        <strong>No resumo,</strong> conte um pouco sobre você, suas qualidades, seus interesses e o que te motiva — tudo
+        em poucas linhas, com sinceridade. Também vale incluir experiências escolares, trabalhos voluntários, cursos e
+        projetos pessoais que mostram seu esforço e aprendizado. Mesmo que ainda não tenha experiência profissional,
+        toda vivência conta!
+      </p>
+
+      <p>
+        <strong>Adicione também:</strong> sua formação, cursos que já fez (presenciais ou online) e suas principais
+        habilidades, como comunicação, trabalho em equipe, criatividade ou informática. Isso ajuda os recrutadores a
+        entenderem seus pontos fortes.
+      </p>
+
+      <p>
+        <strong>Depois, comece a explorar:</strong> siga empresas e profissionais da sua área, curta e comente
+        publicações,
+        compartilhe aprendizados e fique de olho na aba de vagas. Você pode procurar oportunidades por cidade, área,
+        tipo de contrato e até ativar alertas para ser notificado sobre novas vagas.
+      </p>
+
+      <p>
+        <strong>Mais do que um currículo, o LinkedIn é um lugar para mostrar que você está em movimento, mesmo que ainda
+          esteja no começo da jornada.</strong> Não é preciso ter um perfil perfeito, e sim mostrar sua evolução, sua
+        vontade
+        de aprender e seu compromisso com o crescimento. Com dedicação e presença, você começa a construir uma imagem
+        profissional sólida e se aproxima das oportunidades que procura.
+      </p>
+    </div>
+
+    <section class="video-linkedin">
+      <div class="container text-center">
+        <div class="d-flex justify-content-center">
+          <div class="video-container" style="
+          position: relative;
+          width: 80%;
+          padding-bottom: 45%; /* mantém a proporção que você quer */
+          height: 0;
+          overflow: hidden;
+          cursor: pointer;
+        " onclick="window.open('https://youtu.be/Z2PlFl0RuxY?si=uEHcLvtfKqqAJFWn', '_blank')">
+            <img src="img/linkedinvideo.png" alt="Thumbnail do vídeo" style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          " />
+            <!-- Ícone de play opcional -->
+            <div style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+            color: white;
+            pointer-events: none;
+          ">
+              ►
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-  </body>
+
+    <section class="bannerlinkedin container-fluid">
+      <div class="container text-center">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img src="img/giflinkedin.gif" alt="Descrição da Imagem" class="img-fluid linkedinimg" />
+          </div>
+          <div class="col-md-6 d-flex justify-content-center">
+            <h4 class="linkedinh4 text-start">
+              Com dedicação e presença, você começa a construir uma imagem profissional sólida e se aproxima das
+              oportunidades que procura.
+            </h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h3 class="titulo text-center my-5">
+      COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?
+    </h3>
+    <section class="sectiontimeline">
+      <ul class="ultimeline">
+        <li class="litimeline" style="--accent-color: #41516c">
+          <div class="date">DICA 1</div>
+          <div class="title">Pontualidade</div>
+          <div class="descr">
+            Chegue com antecedência de pelo menos 10 a 15 minutos. Isso mostra organização e respeito pelo tempo do
+            recrutador.
+          </div>
+        </li>
+        <li class="litimeline" style="--accent-color: #fbca3e">
+          <div class="date">DICA 2</div>
+          <div class="title">Apresentação pessoal</div>
+          <div class="descr">
+            Vista-se de forma adequada ao ambiente da vaga. Roupa limpa, simples e bem escolhida já transmite
+            profissionalismo.
+          </div>
+        </li>
+        <li class="litimeline" style="--accent-color: #e24a68">
+          <div class="date">DICA 3</div>
+          <div class="title">Comunicação clara</div>
+          <div class="descr">
+            Responda de forma objetiva, sem falar em excesso. Ouça com atenção e mostre interesse na conversa.
+          </div>
+        </li>
+        <li class="litimeline" style="--accent-color: #1b5f8c">
+          <div class="date">DICA 4</div>
+          <div class="title">Demonstre confiança</div>
+          <div class="descr">
+            Mantenha postura ereta, faça contato visual e sorria de forma natural. Isso transmite segurança sem parecer
+            arrogante.
+          </div>
+        </li>
+        <li class="litimeline" style="--accent-color: #4cadad">
+          <div class="date">DICA 5</div>
+          <div class="title">Conheça a empresa</div>
+          <div class="descr">
+            Pesquise antes da entrevista sobre a missão, valores e principais projetos. Isso demonstra preparo e
+            interesse real pela vaga.
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="rodape_redondo">
+    <div class="centraliza text-center">
+      <img class="img_footer" src="img/logo-principal.png" alt="Logo Futuro em Foco" />
+      <nav>
+        <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
+        <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
+        <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
+        <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
+        <a class="menu_rodape" href="dicas.html">DICAS</a>
+        <a class="menu_rodape" href="contato.html">CONTATO</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
