@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+    <!-- js -->
+    <script src="js/script.js"></script>
+
     <!-- link cdn icones - fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body> 
-    <header>
+<body>
 
-       <div class="parte-roxa">
+    <header>
+        <div class="parte-roxa">
 
             <div class="logo">
                <img src="img/logo-ff.png" alt="">
@@ -42,7 +45,7 @@
 
        </div>
 
-       <div class="menu">
+        <div class="menu">
 
             <nav class="menu-desktop">
 
@@ -121,32 +124,11 @@
     </header>
 
     <main>
-
-       <section class="sec-contato">
-            <h2 class="titulo text-center my-5 linha">CONTATO</h2>    
-            <p class="text-center-contato mb-5">
-                Caso tenha dúvidas, sugestões ou deseje obter mais informações sobre o projeto, por favor, preencha o formulário abaixo. Nossa equipe analisará sua mensagem e retornará o contato o mais breve possível. Agradecemos seu interesse e estamos à disposição para auxiliá-lo.
-            </p>
-
-            <div class="container-contato">
-                <form action="agradecer.html" method="POST">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome">
-
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="seuemail@gmail.com">
-
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="+00 00 00000-0000">
-
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem"></textarea>
-
-                    <button class="btn-enviar" type="submit">ENVIAR</button>
-                </form>
-            </div>
-        </section>
-
+        <div class="mensagem-agradecimento" style="text-align: center; margin-top: 100px;">
+            <h1>Obrigado pelo contato!</h1>
+            <p>Recebemos sua mensagem e responderemos o mais breve possível.</p>
+            <a class="btnsaibamais" href="sobre.html" role="button">Voltar à página inicial</a>
+        </div>
     </main>
 
     <footer class="rodape_redondo">
@@ -162,5 +144,6 @@
             </nav>
         </div>
     </footer>
+
 </body>
 </html>

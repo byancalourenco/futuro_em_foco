@@ -836,6 +836,7 @@ input:-webkit-autofill {
     background-color: #d2a7f2;
 }
 
+
 @media (max-width: 768px) {
     .text-center-contato {
         padding: 0 10px;
@@ -848,6 +849,10 @@ input:-webkit-autofill {
 
     .btn-enviar {
         width: 100%;
+    }
+
+    .mensagem-agradecimento p{
+        max-width: 400px;
     }
 }
 
@@ -864,6 +869,34 @@ input:-webkit-autofill {
 
 
 /* MEDIAS */
+
+@media (min-width: 1400px) {
+    .sec-dicas-desktop .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 60px;
+        gap: 40px;
+    }
+
+    .sec-dicas-desktop .col {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .sec-dicas-desktop img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .textos-dica-esquerda,
+    .textos-dica-direita {
+        text-align: left;
+        margin-top: 0;
+    }
+}
+
 
 @media (max-width: 1014px) {
 
@@ -972,6 +1005,7 @@ input:-webkit-autofill {
     }
     
     /*Sobre*/
+
     .section_sobre_dois {
         flex-direction: column; /* Empilha os cards no celular */
         align-items: center; /* Centraliza os elementos */
@@ -1034,7 +1068,7 @@ input:-webkit-autofill {
         border-radius: 8px;
         /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
         width: 1200px;
-        margin-left: 500px;
+        margin-left: 400px;
     }
 }
 
@@ -1122,3 +1156,5 @@ input:-webkit-autofill {
 
     
 }
+
+/* TRANSIÇÃO */
