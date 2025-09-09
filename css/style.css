@@ -553,6 +553,7 @@ html{
 .linkedinh4{
     color: #000;
     font-weight: normal;   /* Remove o negrito */
+    margin-bottom: 5%;
     
 }
 
@@ -884,6 +885,14 @@ input:-webkit-autofill {
 
 
 /* MEDIAS */
+
+
+/* Responsivo: aplica só em telas até 768px (celular/tablet pequeno) */
+@media (max-width: 768px) {
+    .linkedinh4 {
+        margin-bottom: 12%;
+    }
+}
 
 @media (min-width: 1400px) {
     .sec-dicas-desktop .row {
