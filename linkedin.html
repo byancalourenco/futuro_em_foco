@@ -71,6 +71,12 @@
 
             <!-- DIFERENTE DAS OUTRAS PAGINAS - ESTE É PERSONALIZADO, AS OUTRAS SÃO UNIVERSAL!!!! -->
             <script>
+              const menuToggle = document.querySelector('.menu-toggle');
+              const menuDesktop = document.querySelector('.menu-desktop');
+
+              menuToggle.addEventListener('click', () => {
+                menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+              });
               // Função principal de pesquisa
               function pesquisar() {
                 let termo = document
@@ -124,7 +130,8 @@
         <div class="row align-items-center">
           <!-- Imagem -->
           <div class="col-12 col-md-6 text-center order-1 order-md-2">
-            <img class="img-fluid img_sobre mx-auto d-block" src="img/linkedin/giflinkedin2.gif" alt="Hello Kitty and Friends" style="width: 90%;margin-bottom: 15%;">
+            <img class="img-fluid img_sobre mx-auto d-block" src="img/linkedin/giflinkedin2.gif"
+              alt="Hello Kitty and Friends" style="width: 90%;margin-bottom: 15%;">
           </div>
 
           <!-- Texto -->

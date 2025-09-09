@@ -1,234 +1,275 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Futuro em foco</title>
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <!-- link cdn icones - fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="parte-roxa">
-        <div class="logo">
-          <img src="img/logo-ff.png" alt="" />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futuro em foco</title>
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-        <div class="icons">
-          <ul>
-            <li>
-              <a
-                href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm "
-                target="_blank"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-                <i class="fa-regular fa-envelope"></i>
-              </a>
-            </li>
-            <li>
-              <button class="menu-toggle" aria-label="Abrir menu">
-                <span><i class="fa-solid fa-bars"></i></span>
-              </button>
-            </li>
-          </ul>
-        </div>
+  <!-- link cdn icones - fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <div class="parte-roxa">
+      <div class="logo">
+        <img src="img/logo-ff.png" alt="" />
       </div>
 
-      <div class="menu">
-        <nav class="menu-desktop" id="menu-toggle">
-          <ul>
-            <li><a href="sobre.html">SOBRE O PROJETO</a></li>
-            <li><a href="entrevista.html">ENTREVISTA</a></li>
-            <li><a href="linkedin.html">LINKEDIN</a></li>
-            <li><a href="currriculo.html">CURRÍCULO</a></li>
-            <li><a href="dicas.html">DICAS</a></li>
-            <li><a href="contato.html">CONTATO</a></li>
-            <li>
-              <!-- <div class="search-container">
+      <div class="icons">
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm "
+              target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <button class="menu-toggle" aria-label="Abrir menu">
+              <span><i class="fa-solid fa-bars"></i></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="menu">
+      <nav class="menu-desktop" id="menu-toggle">
+        <ul>
+          <li><a href="sobre.html">SOBRE O PROJETO</a></li>
+          <li><a href="entrevista.html">ENTREVISTA</a></li>
+          <li><a href="linkedin.html">LINKEDIN</a></li>
+          <li><a href="currriculo.html">CURRÍCULO</a></li>
+          <li><a href="dicas.html">DICAS</a></li>
+          <li><a href="contato.html">CONTATO</a></li>
+          <li>
+            <!-- <div class="search-container">
                             <input type="search" placeholder="SEARCH">
                             <button type="submit" class="search-button">
                                 <i class="fas fa-search"></i>   Ícone de pesquisa 
                             </button>
                         </div> -->
 
-              <form id="form-pesquisa">
-                <input type="search" id="campo-pesquisa" placeholder="SEARCH" />
-                <button type="submit" class="search-button">
-                  <i class="fas fa-search"></i>
-                  <!--Ícone de pesquisa-->
-                </button>
-              </form>
+            <form id="form-pesquisa">
+              <input type="search" id="campo-pesquisa" placeholder="SEARCH" />
+              <button type="submit" class="search-button">
+                <i class="fas fa-search"></i>
+                <!--Ícone de pesquisa-->
+              </button>
+            </form>
 
-              <script>
-                  // Script de pesquisa universal
-                  (function() {
-                    const formPesquisa = document.getElementById("form-pesquisa");
-                    const campoPesquisa = document.getElementById("campo-pesquisa");
+            <script>
+              const menuToggle = document.querySelector('.menu-toggle');
+              const menuDesktop = document.querySelector('.menu-desktop');
 
-                    if (!formPesquisa || !campoPesquisa) return;
+              menuToggle.addEventListener('click', () => {
+                menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+              });
+              // Script de pesquisa universal
+              (function () {
+                const formPesquisa = document.getElementById("form-pesquisa");
+                const campoPesquisa = document.getElementById("campo-pesquisa");
 
-                    function pesquisar() {
-                      const termo = campoPesquisa.value.toLowerCase();
-                      
-                      // Seleciona todos os blocos que você quer filtrar
-                      // Aqui incluí cards, seções e linhas do bootstrap
-                      const blocos = document.querySelectorAll(".card, .section_sobre, .row, .textocurriculo, .sec-dicas-desktop .row, .sec-dicas-mobile .row");
+                if (!formPesquisa || !campoPesquisa) return;
 
-                      blocos.forEach(bloco => {
-                        const texto = bloco.innerText.toLowerCase();
-                        // Define display correto conforme o tipo de container
-                        if (bloco.classList.contains("row") || bloco.classList.contains("sec-dicas-desktop") || bloco.classList.contains("sec-dicas-mobile")) {
-                          bloco.style.display = texto.includes(termo) ? "flex" : "none";
-                        } else {
-                          bloco.style.display = texto.includes(termo) ? "block" : "none";
-                        }
-                      });
+                function pesquisar() {
+                  const termo = campoPesquisa.value.toLowerCase();
+
+                  // Seleciona todos os blocos que você quer filtrar
+                  // Aqui incluí cards, seções e linhas do bootstrap
+                  const blocos = document.querySelectorAll(".card, .section_sobre, .row, .textocurriculo, .sec-dicas-desktop .row, .sec-dicas-mobile .row");
+
+                  blocos.forEach(bloco => {
+                    const texto = bloco.innerText.toLowerCase();
+                    // Define display correto conforme o tipo de container
+                    if (bloco.classList.contains("row") || bloco.classList.contains("sec-dicas-desktop") || bloco.classList.contains("sec-dicas-mobile")) {
+                      bloco.style.display = texto.includes(termo) ? "flex" : "none";
+                    } else {
+                      bloco.style.display = texto.includes(termo) ? "block" : "none";
                     }
+                  });
+                }
 
-                    // Pesquisa ao apertar Enter
-                    formPesquisa.addEventListener("submit", function(e) {
-                      e.preventDefault();
-                      pesquisar();
-                    });
+                // Pesquisa ao apertar Enter
+                formPesquisa.addEventListener("submit", function (e) {
+                  e.preventDefault();
+                  pesquisar();
+                });
 
-                    // Pesquisa em tempo real enquanto digita
-                    campoPesquisa.addEventListener("input", pesquisar);
-                  })();
-              </script>
-    </header>
+                // Pesquisa em tempo real enquanto digita
+                campoPesquisa.addEventListener("input", pesquisar);
+              })();
+            </script>
+  </header>
 
-    <main>
-        <h3 class="titulo text-center my-5">COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?</h3>
-        <p class="text-center mb-5">Little introduction</p>
+  <main>
+    <h3 class="titulo text-center my-5">COMO SE PORTAR EM UMA ENTREVISTA DE EMPREGO?</h3>
+    <p class="text-center mb-5">Little introduction</p>
 
-        <section class="videos">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6 mb-4 custom-col-video">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/F9_tHGZyhi4?si=GqBRTg29q9hM2lqW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-100"></iframe>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 custom-col">
-                        <!-- Versão para computadores -->
-                        <div class="texto-desktop-esnupi">
-                            <p class="textoentrevistas">O Snoopy é um dos personagens mais icônicos e amados da história das tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única e cativante.</p>
-                            <p class="textoentrevistas">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação, assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu arqui-inimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
-                        </div>
-                    
-                        <!-- Versão para celulares -->
-                        <div class="texto-mobile-esnupi">
-                            <p class="textoentrevistas esnupi1">O Snoopy é um dos personagens mais icônicos e amados da história das tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única e cativante.</p>
-                            <p class="textoentrevistas esnupi2">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação, assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu arqui-inimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
-                        </div>
-                    </div>
-                </div>
+    <section class="videos">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-4 custom-col-video">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/F9_tHGZyhi4?si=GqBRTg29q9hM2lqW" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-100"></iframe>
             </div>
-        </section>
-
-        <section class="videos my-5">
-            <div class="container text-center">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-4 mb-4 ">
-                        <div class="corcard card testimonial-card h-100 border-0">
-                            <div class="card-up aqua-gradient"></div>
-                            <div class="avatar mx-auto white">
-                                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
-                            </div>
-                            <div class="card-body text-center">
-                                <h4 class="card-title font-weight-bold">Esnupi</h4>
-                                <hr>
-                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 mb-4 cardnocelular">
-                        <div class="corcard card testimonial-card h-100 border-0 card-hover">
-                            <div class="card-up aqua-gradient"></div>
-                            <div class="avatar mx-auto white">
-                                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
-                            </div>
-                            <div class="card-body text-center">
-                                <h4 class="card-title font-weight-bold">Esnupi</h4>
-                                <hr>
-                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 mb-4 cardnocelular">
-                        <div class="corcard card testimonial-card h-100 border-0">
-                            <div class="card-up aqua-gradient"></div>
-                            <div class="avatar mx-auto white">
-                                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
-                            </div>
-                            <div class="card-body text-center">
-                                <h4 class="card-title font-weight-bold">Esnupi</h4>
-                                <hr>
-                                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-12 col-md-6 custom-col">
+            <!-- Versão para computadores -->
+            <div class="texto-desktop-esnupi">
+              <p class="textoentrevistas">O Snoopy é um dos personagens mais icônicos e amados da história das tirinhas
+                de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira vez em
+                1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais reconhecíveis
+                e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única e cativante.
+              </p>
+              <p class="textoentrevistas">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o protagonista da
+                série Peanuts. No entanto, ele vai além do papel de simples animal de estimação, assumindo várias
+                identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas estão o "Ace
+                piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu arqui-inimigo, o Barão
+                Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
             </div>
-        </section>
 
-        <section class="videos">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6 custom-col">
-                        <!-- Versão para computadores -->
-                        <div class="texto-desktop-esnupi">
-                            <p class="textoentrevistas text-end">O Snoopy é um dos personagens mais icônicos e amados da história das tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única e cativante.</p>
-                            <p class="textoentrevistas text-end">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação, assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu arqui-inimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 mb-4 custom-col-video">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/F9_tHGZyhi4?si=GqBRTg29q9hM2lqW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-100"></iframe>
-                        </div>
-                    </div>
-                        <div class="col-12 col-md-6 custom-col">
-                            <!-- Versão para celulares -->
-                            <div class="texto-mobile-esnupi">
-                                <p class="textoentrevistas esnupi1">O Snoopy é um dos personagens mais icônicos e amados da história das tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única e cativante.</p>
-                                <p class="textoentrevistas esnupi2">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação, assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu arqui-inimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
-                            </div>
-                        </div>
-                </div>
+            <!-- Versão para celulares -->
+            <div class="texto-mobile-esnupi">
+              <p class="textoentrevistas esnupi1">O Snoopy é um dos personagens mais icônicos e amados da história das
+                tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira
+                vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais
+                reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única
+                e cativante.</p>
+              <p class="textoentrevistas esnupi2">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o
+                protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação,
+                assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas
+                estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu
+                arqui-inimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
             </div>
-        </section>
-
-    </main>
-
-    <footer class="rodape_redondo">
-        <div class="centraliza text-center">
-            <img class="img_footer" src="img/logo-principal.png" alt="Logo Futuro em Foco">
-            <nav>
-                <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
-                <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
-                <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
-                <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
-                <a class="menu_rodape" href="dicas.html">DICAS</a>
-                <a class="menu_rodape" href="contato.html">CONTATO</a>
-            </nav>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <section class="videos my-5">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-4 mb-4 ">
+            <div class="corcard card testimonial-card h-100 border-0">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Esnupi</h4>
+                <hr>
+                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4 cardnocelular">
+            <div class="corcard card testimonial-card h-100 border-0 card-hover">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Esnupi</h4>
+                <hr>
+                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4 cardnocelular">
+            <div class="corcard card testimonial-card h-100 border-0">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="img/iconteste.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi">
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Esnupi</h4>
+                <hr>
+                <p class="textoentrevistas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="videos">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 custom-col">
+            <!-- Versão para computadores -->
+            <div class="texto-desktop-esnupi">
+              <p class="textoentrevistas text-end">O Snoopy é um dos personagens mais icônicos e amados da história das
+                tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira
+                vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais
+                reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única
+                e cativante.</p>
+              <p class="textoentrevistas text-end">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o
+                protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação,
+                assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas
+                estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu
+                arqui-inimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mb-4 custom-col-video">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/F9_tHGZyhi4?si=GqBRTg29q9hM2lqW" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-100"></iframe>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 custom-col">
+            <!-- Versão para celulares -->
+            <div class="texto-mobile-esnupi">
+              <p class="textoentrevistas esnupi1">O Snoopy é um dos personagens mais icônicos e amados da história das
+                tirinhas de quadrinhos. Criado pelo cartunista Charles Schulz, o cãozinho beagle apareceu pela primeira
+                vez em 1950, na tira de quadrinhos Peanuts. Snoopy se tornou rapidamente um dos personagens mais
+                reconhecíveis e queridos do mundo, não só pelas suas aventuras, mas também pela sua personalidade única
+                e cativante.</p>
+              <p class="textoentrevistas esnupi2">Snoopy é conhecido por ser o melhor amigo de Charlie Brown, o
+                protagonista da série Peanuts. No entanto, ele vai além do papel de simples animal de estimação,
+                assumindo várias identidades e alter-egos ao longo das tirinhas. Entre suas personalidades mais famosas
+                estão o "Ace piloto de caça", onde ele imagina ser um aviador de guerra lutando contra o seu
+                arqui-inimigo, o Barão Vermelho, e o "Snoopy escritor", no qual ele tenta escrever romances.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape_redondo">
+    <div class="centraliza text-center">
+      <img class="img_footer" src="img/logo-principal.png" alt="Logo Futuro em Foco">
+      <nav>
+        <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
+        <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
+        <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
+        <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
+        <a class="menu_rodape" href="dicas.html">DICAS</a>
+        <a class="menu_rodape" href="contato.html">CONTATO</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

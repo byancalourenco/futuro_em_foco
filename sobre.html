@@ -1,355 +1,339 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Futuro em foco</title>
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <!-- link cdn icones - fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="parte-roxa">
-        <div class="logo">
-          <img src="img/logo-ff.png" alt="" />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futuro em foco</title>
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-        <div class="icons">
-          <ul>
-            <li>
-              <a
-                href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm "
-                target="_blank"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-                <i class="fa-regular fa-envelope"></i>
-              </a>
-            </li>
-            <li>
-              <button class="menu-toggle" aria-label="Abrir menu">
-                <span><i class="fa-solid fa-bars"></i></span>
-              </button>
-            </li>
-          </ul>
-        </div>
+  <!-- link cdn icones - fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <div class="parte-roxa">
+      <div class="logo">
+        <img src="img/logo-ff.png" alt="" />
       </div>
 
-      <div class="menu">
-        <nav class="menu-desktop" id="menu-toggle">
-          <ul>
-            <li><a href="sobre.html">SOBRE O PROJETO</a></li>
-            <!-- <li><a href="entrevista.html">ENTREVISTA</a></li> -->
-            <li><a href="linkedin.html">LINKEDIN</a></li>
-            <li><a href="currriculo.html">CURRÍCULO</a></li>
-            <li><a href="dicas.html">DICAS</a></li>
-            <li><a href="contato.html">CONTATO</a></li>
-            <li>
-              <!-- <div class="search-container">
+      <div class="icons">
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/futuroemfocomcm?utm_source=ig_web_button_share_sheet&igsh=MnMwaXkwZWkxOGlm "
+              target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <button class="menu-toggle" aria-label="Abrir menu">
+              <span><i class="fa-solid fa-bars"></i></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="menu">
+      <nav class="menu-desktop" id="menu-toggle">
+        <ul>
+          <li><a href="sobre.html">SOBRE O PROJETO</a></li>
+          <!-- <li><a href="entrevista.html">ENTREVISTA</a></li> -->
+          <li><a href="linkedin.html">LINKEDIN</a></li>
+          <li><a href="currriculo.html">CURRÍCULO</a></li>
+          <li><a href="dicas.html">DICAS</a></li>
+          <li><a href="contato.html">CONTATO</a></li>
+          <li>
+            <!-- <div class="search-container">
                             <input type="search" placeholder="SEARCH">
                             <button type="submit" class="search-button">
                                 <i class="fas fa-search"></i>   Ícone de pesquisa 
                             </button>
                         </div> -->
 
-              <form id="form-pesquisa">
-                <input type="search" id="campo-pesquisa" placeholder="SEARCH" />
-                <button type="submit" class="search-button">
-                  <i class="fas fa-search"></i>
-                  <!--Ícone de pesquisa-->
-                </button>
-              </form>
+            <form id="form-pesquisa">
+              <input type="search" id="campo-pesquisa" placeholder="SEARCH" />
+              <button type="submit" class="search-button">
+                <i class="fas fa-search"></i>
+                <!--Ícone de pesquisa-->
+              </button>
+            </form>
 
-              <script>
-                  // Script de pesquisa universal
-                  (function() {
-                    const formPesquisa = document.getElementById("form-pesquisa");
-                    const campoPesquisa = document.getElementById("campo-pesquisa");
+            <script>
 
-                    if (!formPesquisa || !campoPesquisa) return;
+              const menuToggle = document.querySelector('.menu-toggle');
+              const menuDesktop = document.querySelector('.menu-desktop');
 
-                    function pesquisar() {
-                      const termo = campoPesquisa.value.toLowerCase();
-                      
-                      // Seleciona todos os blocos que você quer filtrar
-                      // Aqui incluí cards, seções e linhas do bootstrap
-                      const blocos = document.querySelectorAll(".card, .section_sobre, .row, .textocurriculo, .sec-dicas-desktop .row, .sec-dicas-mobile .row");
+              menuToggle.addEventListener('click', () => {
+                menuDesktop.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+              });
+              // Script de pesquisa universal
+              (function () {
+                const formPesquisa = document.getElementById("form-pesquisa");
+                const campoPesquisa = document.getElementById("campo-pesquisa");
 
-                      blocos.forEach(bloco => {
-                        const texto = bloco.innerText.toLowerCase();
-                        // Define display correto conforme o tipo de container
-                        if (bloco.classList.contains("row") || bloco.classList.contains("sec-dicas-desktop") || bloco.classList.contains("sec-dicas-mobile")) {
-                          bloco.style.display = texto.includes(termo) ? "flex" : "none";
-                        } else {
-                          bloco.style.display = texto.includes(termo) ? "block" : "none";
-                        }
-                      });
+                if (!formPesquisa || !campoPesquisa) return;
+
+                function pesquisar() {
+                  const termo = campoPesquisa.value.toLowerCase();
+
+                  // Seleciona todos os blocos que você quer filtrar
+                  // Aqui incluí cards, seções e linhas do bootstrap
+                  const blocos = document.querySelectorAll(".card, .section_sobre, .row, .textocurriculo, .sec-dicas-desktop .row, .sec-dicas-mobile .row");
+
+                  blocos.forEach(bloco => {
+                    const texto = bloco.innerText.toLowerCase();
+                    // Define display correto conforme o tipo de container
+                    if (bloco.classList.contains("row") || bloco.classList.contains("sec-dicas-desktop") || bloco.classList.contains("sec-dicas-mobile")) {
+                      bloco.style.display = texto.includes(termo) ? "flex" : "none";
+                    } else {
+                      bloco.style.display = texto.includes(termo) ? "block" : "none";
                     }
+                  });
+                }
 
-                    // Pesquisa ao apertar Enter
-                    formPesquisa.addEventListener("submit", function(e) {
-                      e.preventDefault();
-                      pesquisar();
-                    });
+                // Pesquisa ao apertar Enter
+                formPesquisa.addEventListener("submit", function (e) {
+                  e.preventDefault();
+                  pesquisar();
+                });
 
-                    // Pesquisa em tempo real enquanto digita
-                    campoPesquisa.addEventListener("input", pesquisar);
-                  })();
-              </script>
+                // Pesquisa em tempo real enquanto digita
+                campoPesquisa.addEventListener("input", pesquisar);
+              })();
+            </script>
 
-    </header>
+  </header>
 
-    <main>
-      <h2 class="titulo text-center my-5 linha">SOBRE O PROJETO</h2>
+  <main>
+    <h2 class="titulo text-center my-5 linha">SOBRE O PROJETO</h2>
 
-      <section class="section_sobre">
-        <div class="container">
-          <div class="row align-items-center">
-            <!-- Alinha os itens verticalmente -->
-            <div class="col-12 col-md-6">
-              <div class="imgsobre_container">
-                <img
-                  class="img_sobre"
-                  src="img/logo-principal.png"
-                  alt="Hello Kitty and Friends"
-                />
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <h4 class="tituloinicial">O QUE É O PROJETO FUTURO EM FOCO?</h4>
-              <p>
-                O Projeto Futuro em foco é uma iniciativa educacional e social que 
-                tem como foco principal promover a inclusão de adolescentes e jovens 
-                no mercado de trabalho brasileiro, especialmente aqueles que buscam o 
-                primeiro emprego. Diante dos altos índices de desemprego no país e das 
-                dificuldades enfrentadas por quem ainda não possui experiência profissional, 
-                o projeto surge como uma ponte entre os jovens e as oportunidades de trabalho. 
-                A proposta oferece suporte completo durante todo o processo de inserção no mercado, 
-                desde a orientação prática sobre elaboração de currículos e preparação para 
-                entrevistas, até a vivência de experiências que estimulem o aprendizado, o 
-                desenvolvimento de habilidades e a construção da autoconfiança. Além disso, 
-                o projeto busca criar um ambiente acolhedor e acessível, promovendo uma 
-                aproximação entre o ambiente escolar e as exigências do mundo profissional.
-              </p>
-              <a class="btnsaibamais" href="#saibamais" role="button">SAIBA MAIS</a>
+    <section class="section_sobre">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Alinha os itens verticalmente -->
+          <div class="col-12 col-md-6">
+            <div class="imgsobre_container">
+              <img class="img_sobre" src="img/logo-principal.png" alt="Hello Kitty and Friends" />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="section_sobre section_sobre_dois" id="saibamais">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-12 col-md-6 mb-4">
-              <div class="card card_ani h-100">
-                <div class="card-body card_sobre">
-                  <h5 class="card-title titulocard">PÚBLICO-ALVO</h5>
-                  <p class="card-text textocard">
-                    O público-alvo do Projeto Futuro em foco são adolescentes e jovens brasileiros, 
-                    em especial aqueles que estão em fase de transição entre a escola e o mercado de 
-                    trabalho, e que enfrentam dificuldades para ingressar no mundo profissional por 
-                    falta de experiência, informação e apoio. O projeto se volta especialmente para 
-                    estudantes de escolas públicas, jovens em situação de vulnerabilidade social ou 
-                    com acesso limitado a recursos e orientações sobre carreira e empregabilidade. 
-                    São jovens que precisam de suporte prático para conquistar sua primeira oportunidade 
-                    profissional e iniciar sua trajetória com mais segurança e preparo.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 mb-4">
-              <div class="card card_ani h-100">
-                <div class="card-body card_sobre">
-                  <h5 class="card-title titulocard">OBJETIVO</h5>
-                    <p class="card-text textocard">
-                      O principal objetivo do Projeto Futuro em foco é contribuir para a preparação 
-                      e inserção de jovens no mercado de trabalho, oferecendo apoio prático, acessível 
-                      e eficaz. O projeto visa orientar os participantes sobre como elaborar 
-                      currículos de forma adequada, se portar em entrevistas de emprego, escolher 
-                      vestimentas apropriadas para ambientes profissionais e desenvolver habilidades 
-                      comportamentais valorizadas no mundo corporativo, como comunicação, 
-                      responsabilidade e proatividade. Além disso, busca despertar o protagonismo 
-                      juvenil, promover o desenvolvimento pessoal e profissional, e reduzir 
-                      a distância entre a formação escolar e as exigências do mercado. Ao fazer 
-                      isso, o projeto fortalece a autoestima dos jovens e amplia suas possibilidades 
-                      de conquistar oportunidades que contribuam para uma vida mais digna e autônoma.
-                    </p>
-                </div>
-              </div>
-            </div>
+          <div class="col-12 col-md-6">
+            <h4 class="tituloinicial">O QUE É O PROJETO FUTURO EM FOCO?</h4>
+            <p>
+              O Projeto Futuro em foco é uma iniciativa educacional e social que
+              tem como foco principal promover a inclusão de adolescentes e jovens
+              no mercado de trabalho brasileiro, especialmente aqueles que buscam o
+              primeiro emprego. Diante dos altos índices de desemprego no país e das
+              dificuldades enfrentadas por quem ainda não possui experiência profissional,
+              o projeto surge como uma ponte entre os jovens e as oportunidades de trabalho.
+              A proposta oferece suporte completo durante todo o processo de inserção no mercado,
+              desde a orientação prática sobre elaboração de currículos e preparação para
+              entrevistas, até a vivência de experiências que estimulem o aprendizado, o
+              desenvolvimento de habilidades e a construção da autoconfiança. Além disso,
+              o projeto busca criar um ambiente acolhedor e acessível, promovendo uma
+              aproximação entre o ambiente escolar e as exigências do mundo profissional.
+            </p>
+            <a class="btnsaibamais" href="#saibamais" role="button">SAIBA MAIS</a>
           </div>
         </div>
-      </section>
-
-
-      <section class="videos my-5 section_sobre pessoas">
-        <h3 class="titulo_sobre tituloinicial">INTEGRANTES:</h3>
-        <div class="container text-center">
-          <div class="row justify-content-center g-5">
-            <div class="col-12 col-md-4 mb-4">
-              <div class="corcard card testimonial-card h-100 border-0">
-                <div class="card-up aqua-gradient"></div>
-                <div class="avatar mx-auto white">
-                  <img
-                    src="img/foto_meninas/foto_ana.jpeg"
-                    class="rounded-circle img-fluid"
-                    alt="Avatar Esnupi"
-                  />
-                </div>
-                <div class="card-body text-center">
-                  <h4 class="card-title font-weight-bold">Ana Clara Siqueira</h4>
-                  <hr />
-                  <p class="textoentrevistas">
-                    Espero que esse projeto ajude de verdade na formação dos jovens, deixando mais fácil a entrada no mercado de trabalho e abrindo portas para novas chances no futuro.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-              <div
-                class="corcard card testimonial-card h-100 border-0 card-hover"
-              >
-                <div class="card-up aqua-gradient"></div>
-                <div class="avatar mx-auto white">
-                  <img
-                    src="img/foto_meninas/isa_foto.jpg"
-                    class="rounded-circle img-fluid"
-                    alt="Avatar Esnupi"
-                  />
-                </div>
-                <div class="card-body text-center">
-                  <h4 class="card-title font-weight-bold">Isadora Amante</h4>
-                  <hr />
-                  <p class="textoentrevistas">
-                    Espero que este projeto contribua de maneira significativa para a formação dos jovens, facilitando sua entrada no mercado de trabalho e ampliando as oportunidades para o futuro.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-              <div class="corcard card testimonial-card h-100 border-0">
-                <div class="card-up aqua-gradient"></div>
-                <div class="avatar mx-auto white">
-                  <img
-                    src="img/foto_meninas/foto_anaclara.jpeg"
-                    class="rounded-circle img-fluid"
-                    alt="Avatar Esnupi"
-                  />
-                </div>
-                <div class="card-body text-center">
-                  <h4 class="card-title font-weight-bold">Ana Clara Santos</h4>
-                  <hr />
-                  <p class="textoentrevistas">
-                    Desejo que esta iniciativa tenha um impacto positivo na formação dos jovens e promova sua inserção no mercado de trabalho, ampliando as oportunidades para o futuro.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container text-center baixo">
-          <div class="row justify-content-center g-5">
-            <div class="col-12 col-md-4 mb-4">
-              <div class="corcard card testimonial-card h-100 border-0">
-                <div class="card-up aqua-gradient"></div>
-                <div class="avatar mx-auto white">
-                  <img
-                    src="img/foto_meninas/gabi_foto.jpeg"
-                    class="rounded-circle img-fluid"
-                    alt="Avatar Esnupi"
-                  />
-                </div>
-                <div class="card-body text-center">
-                  <h4 class="card-title font-weight-bold">Gabriella Fernandes</h4>
-                  <hr />
-                  <p class="textoentrevistas">
-                    Espero que este projeto traga um impacto positivo para a formação dos jovens, fortalecendo suas habilidades e facilitando o acesso ao mercado de trabalho, criando mais oportunidades e caminhos para o futuro.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-4 mb-4">
-              <div class="corcard card testimonial-card h-100 border-0">
-                <div class="card-up aqua-gradient"></div>
-                <div class="avatar mx-auto white">
-                  <img
-                    src="img/foto_meninas/lavine_certo.jpg"
-                    class="rounded-circle img-fluid"
-                    alt="Avatar Esnupi"
-                  />
-                </div>
-                <div class="card-body text-center">
-                  <h4 class="card-title font-weight-bold">Lavigne Almeida</h4>
-                  <hr />
-                  <p class="textoentrevistas">
-                    Espero que este projeto contribua de forma significativa na capacitação de jovens e facilite a integração ao mercado de trabalho, abrindo novas oportunidades para o futuro.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="sectionroxa">
-        <h3 class="titulo_desenvolvedor tituloinicial">DESENVOLVEDORAS:</h3>
-            <div class="container text-center">
-                <div class="row">
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img class="imgredonda" src="img/foto_divas/ana.jpeg" alt="">
-                    <h5 class="card-title font-weight-bold titulo_divas">Ana Clara Rivas</h5>
-                  </div>
-                  
-                  
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img class="imgredonda" src="img/foto_divas/krisan.jpeg" alt="">
-                    <h5 class="card-title font-weight-bold titulo_divas">Beatriz Krisan</h5>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img class="imgredonda" src="img/foto_divas/bya.jpeg" alt="">
-                    <h5 class="card-title font-weight-bold titulo_divas">Byanca Lourenço</h5>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img class="imgredonda" src="img/foto_divas/gabyy.jpeg" alt="">
-                    <h5 class="card-title font-weight-bold titulo_divas">Gabriely Santos</h5>
-                  </div>
-                     
-
-                </div>
-              </div>
-        </section>
-  
-    </main>
-
-    <footer class="rodape_redondo">
-      <div class="centraliza">
-        <img class="img_footer" src="img/logo-principal.png" alt="" />
-        <nav>
-          <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
-          <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
-          <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
-          <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
-          <a class="menu_rodape" href="dicas.html">DICAS</a>
-          <a class="menu_rodape" href="contato.html">CONTATO</a>
-        </nav>
       </div>
-    </footer>
-    <script src="js/script.js"></script>
-  </body>
+    </section>
+
+    <section class="section_sobre section_sobre_dois" id="saibamais">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-4">
+            <div class="card card_ani h-100">
+              <div class="card-body card_sobre">
+                <h5 class="card-title titulocard">PÚBLICO-ALVO</h5>
+                <p class="card-text textocard">
+                  O público-alvo do Projeto Futuro em foco são adolescentes e jovens brasileiros,
+                  em especial aqueles que estão em fase de transição entre a escola e o mercado de
+                  trabalho, e que enfrentam dificuldades para ingressar no mundo profissional por
+                  falta de experiência, informação e apoio. O projeto se volta especialmente para
+                  estudantes de escolas públicas, jovens em situação de vulnerabilidade social ou
+                  com acesso limitado a recursos e orientações sobre carreira e empregabilidade.
+                  São jovens que precisam de suporte prático para conquistar sua primeira oportunidade
+                  profissional e iniciar sua trajetória com mais segurança e preparo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mb-4">
+            <div class="card card_ani h-100">
+              <div class="card-body card_sobre">
+                <h5 class="card-title titulocard">OBJETIVO</h5>
+                <p class="card-text textocard">
+                  O principal objetivo do Projeto Futuro em foco é contribuir para a preparação
+                  e inserção de jovens no mercado de trabalho, oferecendo apoio prático, acessível
+                  e eficaz. O projeto visa orientar os participantes sobre como elaborar
+                  currículos de forma adequada, se portar em entrevistas de emprego, escolher
+                  vestimentas apropriadas para ambientes profissionais e desenvolver habilidades
+                  comportamentais valorizadas no mundo corporativo, como comunicação,
+                  responsabilidade e proatividade. Além disso, busca despertar o protagonismo
+                  juvenil, promover o desenvolvimento pessoal e profissional, e reduzir
+                  a distância entre a formação escolar e as exigências do mercado. Ao fazer
+                  isso, o projeto fortalece a autoestima dos jovens e amplia suas possibilidades
+                  de conquistar oportunidades que contribuam para uma vida mais digna e autônoma.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="videos my-5 section_sobre pessoas">
+      <h3 class="titulo_sobre tituloinicial">INTEGRANTES:</h3>
+      <div class="container text-center">
+        <div class="row justify-content-center g-5">
+          <div class="col-12 col-md-4 mb-4">
+            <div class="corcard card testimonial-card h-100 border-0">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="img/foto_meninas/foto_ana.jpeg" class="rounded-circle img-fluid" alt="Avatar Esnupi" />
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Ana Clara Siqueira</h4>
+                <hr />
+                <p class="textoentrevistas">
+                  Espero que esse projeto ajude de verdade na formação dos jovens, deixando mais fácil a entrada no
+                  mercado de trabalho e abrindo portas para novas chances no futuro.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+            <div class="corcard card testimonial-card h-100 border-0 card-hover">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="img/foto_meninas/isa_foto.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi" />
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Isadora Amante</h4>
+                <hr />
+                <p class="textoentrevistas">
+                  Espero que este projeto contribua de maneira significativa para a formação dos jovens, facilitando sua
+                  entrada no mercado de trabalho e ampliando as oportunidades para o futuro.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+            <div class="corcard card testimonial-card h-100 border-0">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="img/foto_meninas/foto_anaclara.jpeg" class="rounded-circle img-fluid" alt="Avatar Esnupi" />
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Ana Clara Santos</h4>
+                <hr />
+                <p class="textoentrevistas">
+                  Desejo que esta iniciativa tenha um impacto positivo na formação dos jovens e promova sua inserção no
+                  mercado de trabalho, ampliando as oportunidades para o futuro.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center baixo">
+        <div class="row justify-content-center g-5">
+          <div class="col-12 col-md-4 mb-4">
+            <div class="corcard card testimonial-card h-100 border-0">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="img/foto_meninas/gabi_foto.jpeg" class="rounded-circle img-fluid" alt="Avatar Esnupi" />
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Gabriella Fernandes</h4>
+                <hr />
+                <p class="textoentrevistas">
+                  Espero que este projeto traga um impacto positivo para a formação dos jovens, fortalecendo suas
+                  habilidades e facilitando o acesso ao mercado de trabalho, criando mais oportunidades e caminhos para
+                  o futuro.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 mb-4">
+            <div class="corcard card testimonial-card h-100 border-0">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="img/foto_meninas/lavine_certo.jpg" class="rounded-circle img-fluid" alt="Avatar Esnupi" />
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Lavigne Almeida</h4>
+                <hr />
+                <p class="textoentrevistas">
+                  Espero que este projeto contribua de forma significativa na capacitação de jovens e facilite a
+                  integração ao mercado de trabalho, abrindo novas oportunidades para o futuro.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectionroxa">
+      <h3 class="titulo_desenvolvedor tituloinicial">DESENVOLVEDORAS:</h3>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <img class="imgredonda" src="img/foto_divas/ana.jpeg" alt="">
+            <h5 class="card-title font-weight-bold titulo_divas">Ana Clara Rivas</h5>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <img class="imgredonda" src="img/foto_divas/krisan.jpeg" alt="">
+            <h5 class="card-title font-weight-bold titulo_divas">Beatriz Krisan</h5>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <img class="imgredonda" src="img/foto_divas/bya.jpeg" alt="">
+            <h5 class="card-title font-weight-bold titulo_divas">Byanca Lourenço</h5>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <img class="imgredonda" src="img/foto_divas/gabyy.jpeg" alt="">
+            <h5 class="card-title font-weight-bold titulo_divas">Gabriely Santos</h5>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape_redondo">
+    <div class="centraliza">
+      <img class="img_footer" src="img/logo-principal.png" alt="" />
+      <nav>
+        <a class="menu_rodape" href="sobre.html">SOBRE O PROJETO</a>
+        <a class="menu_rodape" href="entrevista.html">ENTREVISTAS</a>
+        <a class="menu_rodape" href="linkedin.html">LINKEDIN</a>
+        <a class="menu_rodape" href="currriculo.html">CURRÍCULO</a>
+        <a class="menu_rodape" href="dicas.html">DICAS</a>
+        <a class="menu_rodape" href="contato.html">CONTATO</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
