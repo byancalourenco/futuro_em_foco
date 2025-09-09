@@ -934,6 +934,12 @@ input:-webkit-autofill {
         padding: 5px 20px;
     }
 
+    .menu-toggle {
+        display: block ; /* Exibe o botão de menu em telas pequenas */
+        z-index: 9999; /* importante! */
+    }
+
+
     .menu-desktop ul {
         display: none; /* Esconde o menu em telas pequenas */
         flex-direction: column; /* Organiza os itens verticalmente */
@@ -955,9 +961,6 @@ input:-webkit-autofill {
         text-align: center;
     }
 
-    .menu-toggle {
-        display: block ; /* Exibe o botão de menu em telas pequenas */
-    }
 
     .menu-desktop.active ul {
         display: flex; /* Mostra o menu quando a classe 'active' for adicionada */
