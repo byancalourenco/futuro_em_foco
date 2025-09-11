@@ -722,60 +722,304 @@ html{
 }
 
 
+/* GERADOR  */
+
+/* --- Currículo e Gerador --- */
+
+#curriculo {
+  width: 800px;
+  margin: 0 auto;
+}
+.contatos {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* permite quebrar em telas menores */
+}
+
+.hidden {
+  display: none;
+}
+
+
+.experiencia,
+.formacao,
+.curso {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* responsivo */
+}
+
+.experiencia input,
+.formacao input,
+.curso input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 120px; /* garante que inputs não fiquem muito pequenos */
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+
+/* --- Labels e Inputs --- */
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 20px;
+  color: #8742C1;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #8742C1;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-bottom: 2px solid #8742C1;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* --- Botões --- */
+button[type="button"],
+.btn-enviar {
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+  background-color: #E0BBFF;
+  color: #8742C1;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover,
+.btn-enviar:hover {
+  background-color: #d2a7f2;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 1024px) {
+  .contatos {
+    gap: 20px;
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .experiencia input,
+  .formacao input,
+  .curso input {
+    flex: 1 1 100%; /* ocupam 100% da linha */
+  }
+
+  .contatos {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cabecalho img.foto {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 0.95rem;
+  }
+
+  button[type="button"],
+  .btn-enviar {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .contatos p {
+    font-size: 0.9rem;
+  }
+
+  .cabecalho {
+    gap: 10px;
+  }
+}
+
+form#formCurriculo{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+button#add {
+  margin-top: 20px; /* afasta do elemento acima */
+  margin-bottom: 20px; /* afasta do elemento abaixo */
+}
+
+.container {
+  text-align: center;
+}
+
+.botao {
+  padding: 10px 20px;
+  background-color: #6C63FF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*___________________________________________________________________________________________________*/ 
 
 /* DICAS - bya */
 
-.textos-dica-esquerda{
-    margin-top: 20px;
+/* Seção de Dicas - Responsiva */
+.sec-dicas {
+  margin-bottom: 5%;
 }
 
-.textos-dica-direita{
-    margin-top: 20px;
-    text-align: right;
+/* Linha de cada dica */
+.row-dica {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* Permite empilhar no mobile */
 }
 
-.button-dicas{
-    padding: 10px;
-    border-radius: 30px;
-    font-weight: 600;
-    border: none;
-    background-color: #E0BBFF;
-    width: 200px;
-    color: #000;
+/* Colunas de texto e imagem */
+.col-texto {
+  flex: 1 1 55%; /* Texto ocupa ~55% da largura em telas grandes */
+  min-width: 250px;
 }
 
-.button-dicas:hover{
-    cursor: pointer;
-    background-color: #E0BBFF;
-    color: #000;
+.col-imagem {
+  flex: 1 1 40%; /* Imagem ocupa ~40% da largura em telas grandes */
+  min-width: 200px;
 }
 
-.button-dicas:active{
-    background-color: #E0BBFF;
+/* Estilo das imagens */
+.img-dicas {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-.espaco-dicas{
-    margin-right: 16px;
+/* Estilo do texto */
+.textos-dica {
+  margin-top: 10px;
+  line-height: 1.6;
 }
 
-.sec-dicas-desktop{
-    margin-bottom: 13%;
+.textos-dica h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
-.sec-dicas-mobile{
-    display: none;
+.textos-dica p {
+  font-size: 1rem;
 }
 
-.img-dicas-modal{
-    width: 400px;
-    right: 50%;
-    left: 50%;
-}
+/* Responsividade para telas menores que 768px (celulares) */
+@media (max-width: 767px) {
+  .row-dica {
+    flex-direction: column; /* Empilha imagem e texto */
+  }
 
-.text-modal{
-    align-items: left;
+  .col-texto,
+  .col-imagem {
+    flex: 1 1 100%;
+  }
+
+  .col-imagem {
+    margin-top: 15px;
+  }
+
+  .textos-dica {
     text-align: left;
+  }
 }
+
+/* Botão Dicas (opcional) */
+.button-dicas {
+  padding: 10px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+  background-color: #E0BBFF;
+  width: 200px;
+  color: #000;
+  transition: 0.3s ease;
+  margin-top: 20px;
+}
+
+.button-dicas:hover {
+  cursor: pointer;
+  background-color: #d3a6ff;
+  color: #000;
+}
+
+.button-dicas:active {
+  background-color: #c18cff;
+}
+
+/* Alterna imagem e texto de lado em telas médias/grandes */
+@media (min-width: 768px) {
+  .row-dica.reverse-dica {
+    flex-direction: row-reverse; /* Inverte a ordem da imagem e texto */
+  }
+}
+
+
+/*___________________________________________________________________________________________________*/ 
+
 
 /* CONTATO - bya */
 
@@ -893,34 +1137,6 @@ input:-webkit-autofill {
         margin-bottom: 12%;
     }
 }
-
-@media (min-width: 1400px) {
-    .sec-dicas-desktop .row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 60px;
-        gap: 40px;
-    }
-
-    .sec-dicas-desktop .col {
-        flex: 1;
-        max-width: 50%;
-    }
-
-    .sec-dicas-desktop img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    .textos-dica-esquerda,
-    .textos-dica-direita {
-        text-align: left;
-        margin-top: 0;
-    }
-}
-
 
 @media (max-width: 1014px) {
 
@@ -1057,32 +1273,8 @@ input:-webkit-autofill {
     }
 }
 
-@media (min-width: 1015px) and (max-width: 1200px){
-    .sec-dicas-desktop{
-        display: none;
-    }
-
-    .sec-dicas-mobile{
-        display: block;
-        margin-bottom: 30%;
-    }
-
-    .row .col .img-dicas{
-        width: 360px;
-        margin-top: 30px;
-    }
-}
-
 
 @media (min-width: 1500px){
-
-    .espaco-dicas{
-        margin-right: 20px;
-    }
-
-    .espaco-dicas2{
-        margin-left: 20px;
-    }
 
     .text-center-contato{
         max-width: 1300px;

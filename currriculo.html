@@ -140,7 +140,134 @@
         turpi
       </p>
     </div>
+
+    <section>
+    <h2 class="titulo text-center my-5 linha">GERADOR DE CURRÍCULO</h2>
+      <p class="text-center-contato mb-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium possimus hic doloremque magni ut quae. Incidunt, debitis veritatis? Sunt beatae illum sapiente, ab vero dignissimos. Eos quo expedita incidunt atque.
+      </p>
+
+      <form id="formCurriculo" method="post">
+        <label>Seu nome:</label>
+        <input type="text" id="nome" placeholder="Ex: Nome Sobrenome" required>
+
+        <label>Sua idade:</label>
+        <input type="text" id="idade" placeholder="Ex: 22" required>
+
+        <label>Sua data de nascimento:</label>
+        <input type="date" id="data"  placeholder="Ex: 01/01/2001" required>
+
+        <label>Seu telefone:</label>
+        <input type="text" id="telefone" placeholder="Ex: +55 11 91234-5678" required>
+
+        <label>Seu email:</label>
+        <input type="email" id="email" placeholder="Ex: exemplo@gmail.com" required>
+
+        <label>Sua cidade:</label>
+        <input type="text" id="cidade" placeholder="Ex: São Paulo" required>
+
+        <label>Seu estado:</label>
+        <select id="estado" required>
+          <option value="">Selecione seu estado</option>
+          <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+          <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
+          <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+          <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+          <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+          <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
+          <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
+          <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+          <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+        </select>
+
+        <label>Seu perfil profissional:</label>
+        <textarea id="perfil" placeholder="Perfil profissional"></textarea>
+
+        <!-- Formação -->
+        <div id="formacaoContainer">
+          <div class="formacao">
+            <label>Sua Formação acadêmica:</label>
+            <input type="text" name="dataInicioFormacao" placeholder="Ano de início">
+            <input type="text" name="dataFimFormacao" placeholder="Ano de término">
+            <input type="text" name="tituloFormacao" placeholder="Formação">
+            <input type="text" name="lugarFormacao" placeholder="Local de formação">
+          </div>
+        </div>
+        <button id="add" type="button" onclick="adicionarFormacao()">+ Adicionar Formação</button>
+
+        <!-- Experiência -->
+        <div id="experienciasContainer">
+          <div class="experiencia">
+            <label>Suas experiências profissionais:</label>
+            <input type="text" name="dataInicio" placeholder="Ano de início">
+            <input type="text" name="dataFim" placeholder="Ano de término">
+            <input type="text" name="cargo" placeholder="Cargo exercido">
+            <input type="text" name="lugar" placeholder="Empresa onde trabalhou">
+          </div>
+        </div>
+        <button  id="add" type="button" onclick="adicionarExperiencia()">+ Adicionar Experiência</button>
+
+        <!-- Cursos -->
+        <div id="cursosContainer">
+          <div class="curso">
+            <label>Seus cursos:</label>
+            <input type="text" name="curso" placeholder="Nome do curso">
+            <input type="text" name="anoCurso" placeholder="Ano do curso">
+            <input type="text" name="lugarCurso" placeholder="Local do curso">
+          </div>
+        </div>
+        <button id="add" type="button" onclick="adicionarCurso()">+ Adicionar Curso</button>
+
+        <!-- Foto -->
+        <div>
+          <label>Adicione sua foto:</label>
+          <input type="file" id="foto" accept="image/*">
+        </div>
+
+        <div class="container">
+          <button type="button" class="botao" onclick="verificarCampos()">Gerar Currículo</button>        
+        </div>
+
+
+      </form>
+
+      <!-- Currículo gerado -->
+      <div id="curriculo" class="cv hidden">
+        <div class="cabecalho">
+          <img id="outFoto" class="foto" src="" alt="Foto do candidato">
+          <div>
+            <h1 id="outNome"></h1>
+            <h3 id="outIdade"></h3>
+            <p id="outData"></p>
+          </div>
+        </div>
+
+        <div class="contatos">
+          <p><i class="fas fa-phone"></i> <span id="outTelefone"></span></p>
+          <p><i class="fas fa-envelope"></i> <span id="outEmail"></span></p>
+          <p><i class="fas fa-map-marker-alt"></i> <span id="outCidade"></span></p>
+        </div>
+
+        <h4>PERFIL PROFISSIONAL</h4>
+        <p id="outPerfil"></p>
+
+        <h4>FORMAÇÃO</h4>
+        <ul id="outFormacao"></ul>
+
+        <h4>EXPERIÊNCIA PROFISSIONAL</h4>
+        <ul id="outExperiencias"></ul>
+
+        <h4>CURSOS</h4>
+        <ul id="outCursos"></ul>
+      </div>
+
+      <div class="container">
+        <button type="button" id="btnPdf" class="hidden" onclick="gerarPDF()">Baixar PDF</button>
+      </div>
+
+    </section>
   </main>
+
   <footer class="rodape_redondo">
     <div class="centraliza">
       <img class="img_footer" src="img/logo-principal.png" alt="" />
@@ -154,7 +281,9 @@
       </nav>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/gerador.js"></script>
 </body>
 
 </html>
