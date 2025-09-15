@@ -721,10 +721,17 @@ html{
     padding-bottom: 20%;
 }
 
+.texto-roxo{
+    color: #8742C1;
+}
 
 /* GERADOR  */
 
 /* --- Currículo e Gerador --- */
+
+.gerador{
+    margin-top: 8%;
+}
 
 #curriculo {
   width: 800px;
