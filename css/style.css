@@ -802,211 +802,93 @@ html {
     color: #8742C1;
 }
 
-/* GERADOR  */
-
-/* --- Currículo e Gerador --- */
 
 .gerador {
-    margin-top: 8%;
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
 }
 
-#curriculo {
-    width: 800px;
-    margin: 0 auto;
+.titulo {
+  text-align: center;
+  font-size: 28px;
+  color: #8742C1;
+  margin-bottom: 40px;
 }
 
-.contatos {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    /* permite quebrar em telas menores */
+form label {
+  font-weight: 600;
+  margin-top: 25px;
+  display: block;
+  color: #8742C1;
+  text-align: left;
 }
 
-.hidden {
-    display: none;
-}
-
-
-.experiencia,
-.formacao,
-.curso {
-    margin-bottom: 10px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    /* responsivo */
-}
-
-.experiencia input,
-.formacao input,
-.curso input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    min-width: 120px;
-    /* garante que inputs não fiquem muito pequenos */
-}
-
-.cabecalho {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-.foto {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #333;
-}
-
-/* --- Labels e Inputs --- */
-label {
-    font-weight: bold;
-    display: block;
-    margin-top: 20px;
-    color: #8742C1;
-}
-
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: none;
-    background-color: transparent;
-    border-bottom: 1px solid #8742C1;
-    font-size: 1rem;
-    box-sizing: border-box;
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
 }
 
 textarea {
-    resize: vertical;
-    min-height: 90px;
+  resize: vertical;
+  min-height: 100px;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-bottom: 2px solid #8742C1;
+#formacaoContainer button {
+  margin-top: 25px;
+  padding: 12px 24px;
+  background: #8742C1;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5%;
 }
 
 button {
-    cursor: pointer;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background: #8742C1;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-/* --- Botões --- */
-button[type="button"],
-.btn-enviar {
-    padding: 12px;
-    border-radius: 30px;
-    font-weight: 600;
-    border: none;
-    background-color: #E0BBFF;
-    color: #8742C1;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-button[type="button"]:hover,
-.btn-enviar:hover {
-    background-color: #d2a7f2;
-}
-
-/* --- Responsividade --- */
-@media (max-width: 1024px) {
-    .contatos {
-        gap: 20px;
-    }
-
-    .cabecalho {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .experiencia input,
-    .formacao input,
-    .curso input {
-        flex: 1 1 100%;
-        /* ocupam 100% da linha */
-    }
-
-    .contatos {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .cabecalho img.foto {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    h1,
-    h2,
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    input,
-    textarea,
-    select {
-        font-size: 0.95rem;
-    }
-
-    button[type="button"],
-    .btn-enviar {
-        width: 100%;
-        max-width: 100%;
-        font-size: 0.95rem;
-    }
-
-    .contatos p {
-        font-size: 0.9rem;
-    }
-
-    .cabecalho {
-        gap: 10px;
-    }
-}
-
-form#formCurriculo {
-    width: 1000px;
-    margin: 0 auto;
-}
-
-button#add {
-    margin-top: 20px;
-    /* afasta do elemento acima */
-    margin-bottom: 20px;
-    /* afasta do elemento abaixo */
+button:hover {
+  background: #6a3093;
 }
 
 .container {
-    text-align: center;
+  text-align: center;
 }
 
-.botao {
-    padding: 10px 20px;
-    background-color: #6C63FF;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
+.formacao, .experiencia {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 40px 0;
+}
+
+.cv {
+  margin-top: 60px;
+  padding: 40px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
 }
 
 /*___________________________________________________________________________________________________*/

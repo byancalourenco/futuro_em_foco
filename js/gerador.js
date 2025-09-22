@@ -1,37 +1,15 @@
-// Adicionar curso
-function adicionarCurso() {
-  const container = document.getElementById("cursosContainer");
-  const novoCurso = document.createElement("div");
-  novoCurso.classList.add("curso");
+// Função para calcular idade
+function calcularIdade(dataNascimento) {
+  const hoje = new Date();
+  const nascimento = new Date(dataNascimento);
+  let idade = hoje.getFullYear() - nascimento.getFullYear();
+  const mes = hoje.getMonth() - nascimento.getMonth();
 
-  novoCurso.innerHTML = `
-    <input type="text" name="curso" placeholder="Nome do curso">
-    <input type="text" name="anoCurso" placeholder="Ano do curso">
-    <input type="text" name="lugarCurso" placeholder="Local do curso">
-    <button type="button" onclick="removerCampo(this)">Remover</button>
-  `;
-
-  container.appendChild(novoCurso);
+  if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
+    idade--;
+  }
+  return idade;
 }
-
-
-// Adicionar experiência
-function adicionarExperiencia() {
-  const container = document.getElementById("experienciasContainer");
-  const novaExperiencia = document.createElement("div");
-  novaExperiencia.classList.add("experiencia");
-
-  novaExperiencia.innerHTML = `
-    <input type="text" name="dataInicio" placeholder="Ano de início">
-    <input type="text" name="dataFim" placeholder="Ano de término">
-    <input type="text" name="cargo" placeholder="Cargo exercido">
-    <input type="text" name="lugar" placeholder="Empresa onde trabalhou">
-    <button type="button" onclick="removerCampo(this)">Remover</button>
-  `;
-
-  container.appendChild(novaExperiencia);
-}
-
 
 // Adicionar formação
 function adicionarFormacao() {
@@ -50,34 +28,44 @@ function adicionarFormacao() {
   container.appendChild(novaFormacao);
 }
 
-// remover
+// Adicionar experiência
+function adicionarExperiencia() {
+  const container = document.getElementById("experienciasContainer");
+  const novaExperiencia = document.createElement("div");
+  novaExperiencia.classList.add("experiencia");
+
+  novaExperiencia.innerHTML = `
+    <input type="text" name="dataInicio" placeholder="Ano de início">
+    <input type="text" name="dataFim" placeholder="Ano de término">
+    <input type="text" name="cargo" placeholder="Cargo exercido">
+    <input type="text" name="lugar" placeholder="Empresa onde trabalhou">
+    <button type="button" onclick="removerCampo(this)">Remover</button>
+  `;
+
+  container.appendChild(novaExperiencia);
+}
+
+// Remover campo dinâmico
 function removerCampo(botao) {
   botao.parentElement.remove();
 }
 
-
 // Gerar currículo
 function gerarCurriculo() {
-  // Dados básicos
   document.getElementById("outNome").innerText = document.getElementById("nome").value;
-  document.getElementById("outTelefone").innerText = document.getElementById("telefone").value;
-  document.getElementById("outEmail").innerText = document.getElementById("email").value;
-  document.getElementById("outPerfil").innerText = document.getElementById("perfil").value;
 
-  // Idade
-  const idade = document.getElementById("idade").value;
-  document.getElementById("outIdade").innerText = `${idade} Anos`;
-
-  // Data 
   const data = document.getElementById("data").value;
-  document.getElementById("outData").innerText = `${data}`;
+  const idade = calcularIdade(data);
+  document.getElementById("outIdade").innerText = idade;
 
+  document.getElementById("outCidade").innerText = document.getElementById("cidade").value;
+  document.getElementById("outEstado").innerText = document.getElementById("estado").value;
+  document.getElementById("outCivil").innerText = document.getElementById("civil").value;
+  document.getElementById("outTelefone").innerText = document.getElementById("telefone").value;
+  document.getElementById("outNacionalidade").innerText = document.getElementById("nacionalidade").value;
+  document.getElementById("outEmail").innerText = document.getElementById("email").value;
 
-
-  // Cidade e estado
-  const cidade = document.getElementById("cidade").value;
-  const estado = document.getElementById("estado").value;
-  document.getElementById("outCidade").innerText = `${cidade}, ${estado}`;
+  document.getElementById("outObjetivo").innerText = document.getElementById("objetivo").value;
 
   // Formação
   const formacoes = document.querySelectorAll("#formacaoContainer .formacao");
@@ -91,16 +79,16 @@ function gerarCurriculo() {
     const lugar = exp.querySelector('input[name="lugarFormacao"]').value;
 
     if (inicio && fim && titulo && lugar) {
-      const li = document.createElement("li");
-      li.innerText = `${titulo} - ${lugar} (${inicio} - ${fim})`;
-      outFormacao.appendChild(li);
+      const p = document.createElement("p");
+      p.innerText = `${titulo} - ${lugar} (${inicio} - ${fim})`;
+      outFormacao.appendChild(p);
     }
   });
 
   // Experiências
   const experiencias = document.querySelectorAll("#experienciasContainer .experiencia");
-  const listaExp = document.getElementById("outExperiencias");
-  listaExp.innerHTML = "";
+  const outExperiencias = document.getElementById("outExperiencias");
+  outExperiencias.innerHTML = "";
 
   experiencias.forEach(exp => {
     const inicio = exp.querySelector('input[name="dataInicio"]').value;
@@ -109,89 +97,83 @@ function gerarCurriculo() {
     const lugar = exp.querySelector('input[name="lugar"]').value;
 
     if (inicio && fim && cargo && lugar) {
-      const li = document.createElement("li");
-      li.innerText = `De ${inicio} até ${fim}: ${cargo} | ${lugar}`;
-      listaExp.appendChild(li);
+      const p = document.createElement("p");
+      p.innerText = `${cargo} - ${lugar} (${inicio} - ${fim})`;
+      outExperiencias.appendChild(p);
     }
   });
 
-  // Cursos
-  const cursos = document.querySelectorAll("#cursosContainer .curso");
-  const listaCursos = document.getElementById("outCursos");
-  listaCursos.innerHTML = "";
+  document.getElementById("outVoluntariado").innerText = document.getElementById("voluntariado").value;
 
-  cursos.forEach(cursoDiv => {
-    const nome = cursoDiv.querySelector("input[name='curso']").value;
-    const ano = cursoDiv.querySelector("input[name='anoCurso']").value;
-    const lugar = cursoDiv.querySelector("input[name='lugarCurso']").value;
-
-    if (nome && ano && lugar) {
-      const li = document.createElement("li");
-      li.innerText = `${nome} - ${ano} | ${lugar}`;
-      listaCursos.appendChild(li);
-    }
-  });
-
-  // Foto
-    const fotoInput = document.getElementById("foto");
-    const outFoto = document.getElementById("outFoto");
-
-    if (fotoInput.files.length > 0) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        outFoto.src = e.target.result;
-        outFoto.style.display = "block"; // mostra a imagem
-    };
-    reader.readAsDataURL(fotoInput.files[0]);
-    } else {
-    outFoto.src = "";
-    outFoto.style.display = "none"; // esconde se não tiver imagem
-    }
-
-
-  // Exibir currículo e botão PDF
   document.getElementById("curriculo").classList.remove("hidden");
   document.getElementById("btnPdf").classList.remove("hidden");
 }
 
-// Verificar se tudo foi preenchido
+// Verificação
 function verificarCampos() {
   const form = document.getElementById("formCurriculo");
-  const obrigatorios = form.querySelectorAll("input[required], select[required], textarea[required]");
-  let camposVazios = [];
+  const campos = form.querySelectorAll("input[required], textarea[required], select[required]");
+  let vazio = false;
 
-  obrigatorios.forEach(campo => {
+  campos.forEach(campo => {
     if (!campo.value.trim()) {
-      camposVazios.push(campo);
+      vazio = true;
+      campo.style.border = "2px solid red";
+    } else {
+      campo.style.border = "1px solid #ccc";
     }
   });
 
-  // Verifica campos dinâmicos (formações, experiências, cursos)
-  const dinamicos = form.querySelectorAll("#formacaoContainer input, #experienciasContainer input, #cursosContainer input");
-  dinamicos.forEach(campo => {
-    if (!campo.value.trim()) {
-      camposVazios.push(campo);
-    }
-  });
-
-  if (camposVazios.length > 0) {
-    alert("Por favor, preencha todos os campos antes de gerar o currículo.");
-    camposVazios[0].focus(); // Foca no primeiro campo vazio
+  if (vazio) {
+    alert("Preencha todos os campos obrigatórios!");
     return;
   }
 
-  // Tudo preenchido, agora sim chama a função principal
   gerarCurriculo();
 }
 
-// Gerar PDF
 function gerarPDF() {
-  const element = document.getElementById("curriculo");
-  html2pdf().from(element).set({
-    margin: 10,
-    filename: 'curriculo.pdf',
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  }).save();
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.setFont("helvetica", "normal"); // Helvetica é o substituto direto de Arial
+  doc.setFontSize(13);
+
+  let y = 20;
+
+  // Nome
+  doc.text(`Nome: ${document.getElementById("outNome").innerText}`, 20, y); y += 10;
+
+  // Dados pessoais
+  doc.text(`Idade: ${document.getElementById("outIdade").innerText} anos`, 20, y); y += 10;
+  doc.text(`Estado civil: ${document.getElementById("outCivil").innerText}`, 20, y); y += 10;
+  doc.text(`Cidade: ${document.getElementById("outCidade").innerText}`, 20, y); y += 10;
+  doc.text(`Estado: ${document.getElementById("outEstado").innerText}`, 20, y); y += 10;
+  doc.text(`Telefone: ${document.getElementById("outTelefone").innerText}`, 20, y); y += 10;
+  doc.text(`E-mail: ${document.getElementById("outEmail").innerText}`, 20, y); y += 10;
+  doc.text(`Naturalidade: ${document.getElementById("outNacionalidade").innerText}`, 20, y); y += 10;
+
+  // Objetivo
+  doc.text("Objetivo:", 20, y); y += 10;
+  doc.text(document.getElementById("outObjetivo").innerText, 20, y); y += 10;
+
+  // Formação
+  doc.text("Formação:", 20, y); y += 10;
+  document.querySelectorAll("#outFormacao p").forEach(p => {
+    doc.text(p.innerText, 20, y); y += 10;
+  });
+
+  // Experiência
+  doc.text("Experiência:", 20, y); y += 10;
+  document.querySelectorAll("#outExperiencias p").forEach(p => {
+    doc.text(p.innerText, 20, y); y += 10;
+  });
+
+  // Voluntariado
+  doc.text("Voluntariado:", 20, y); y += 10;
+  doc.text(document.getElementById("outVoluntariado").innerText, 20, y); y += 10;
+
+  doc.save("curriculo.pdf");
 }
- 
+
+
